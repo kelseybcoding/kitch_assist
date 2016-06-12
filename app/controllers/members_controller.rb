@@ -1,4 +1,9 @@
 class MembersController < ApplicationController
+	
+	def index
+		
+	end
+
 	def new
 		
 	end
@@ -8,7 +13,7 @@ class MembersController < ApplicationController
 
 		if @member.save
 			session[:member_id] = @member.id
-		    redirect_to :home, notice: 'Account created successfully'
+		    redirect_to "/members/#{@member.id}", notice: 'Account created successfully'
 		else
 		    flash[:error] = 'An error occurred!'
 		    render 'new'

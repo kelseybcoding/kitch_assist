@@ -5,10 +5,11 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		member = Member.find_by_username(params[:id])
+		member = Member.find_by_username(params[:username])
 		if member && member.authenticate(params[:password])
-			session[:member_id] = member_id
-			redirect_to '/'
+			session[:member_id] = member.id
+			redirect_to "/members/#{member.id}"
+			#'/members/:id'
 		else
 			redirect_to '/login'
 		end

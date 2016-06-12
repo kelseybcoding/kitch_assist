@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611011924) do
+ActiveRecord::Schema.define(version: 20160611202319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "kitchen_tools", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "first_name"
@@ -25,6 +32,58 @@ ActiveRecord::Schema.define(version: 20160611011924) do
     t.string   "skill_level"
     t.integer  "zipcode"
     t.text     "bio"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "owned_tools", force: :cascade do |t|
+    t.integer  "member_id"
+    t.integer  "kitchen_tool_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "pantry_items", force: :cascade do |t|
+    t.integer  "member_id"
+    t.integer  "recipe_ingredient_id"
+    t.date     "expiration_date"
+    t.integer  "quantity"
+    t.string   "units"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.string   "category"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "title"
+    t.string   "servings"
+    t.string   "prep_time"
+    t.string   "cook_time"
+    t.string   "image"
+    t.text     "instructions"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.text     "ingredients"
+  end
+
+  create_table "required_ingredients", force: :cascade do |t|
+    t.integer  "recipe_ingredient_id"
+    t.integer  "recipe_id"
+    t.integer  "quantity"
+    t.string   "units"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "required_tools", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "kitchen_tool_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
