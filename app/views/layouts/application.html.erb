@@ -9,15 +9,28 @@
   </head>
 
   <body>
+  
+<!-- SEARCH BAR CODE -->
+      <%= form_tag '/', method: :get, class: "col-lg-5" do %>
+        <div class="form-group">
+          <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search For A Recipe" %>
+        </div>
 
+          <%= submit_tag "GO!", class: "btn btn-default" %>
+      <% end %>
+        
 
-
+  
   <!--bcrypt code-->
+  <div class="navbar-right">
       <% if current_member %>
         Signed in as <%= current_member.username %> | <%= link_to "Logout", '/logout' %>
       <% else %>
         <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  
       <% end %>
+  </div>
+
   
   
     <%= yield %>

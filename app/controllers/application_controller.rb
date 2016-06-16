@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+#++++++++++++ bcrypt code *********************
   def current_member
       @current_member ||= Member.find(session[:member_id]) if session[:member_id]
   end
@@ -12,3 +13,5 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_member
   end
 end
+
+#**************************************

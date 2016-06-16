@@ -8,6 +8,8 @@ class MembersController < ApplicationController
 		
 	end
 
+
+#++++++++++++ bcrypt code *********************
 	def create
 		@member = Member.new(member_params)
 
@@ -23,6 +25,6 @@ class MembersController < ApplicationController
 private
 
 	 def member_params
-	    params.require(:member).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
+	    params.require(:member).permit(:first_name, :last_name, :username, :email, :zipcode, :skill_level, :bio, :password, :password_confirmation)
 	 end
 end

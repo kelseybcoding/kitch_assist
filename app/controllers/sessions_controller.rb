@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
 		
 	end
 
+#++++++++++++ bcrypt code *********************
+
 	def create
 		member = Member.find_by_username(params[:username])
 		if member && member.authenticate(params[:password])
@@ -17,6 +19,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:member_id] = nil
-		redirect_to '/login'
+		redirect_to '/home'
 	end
 end
