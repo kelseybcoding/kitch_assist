@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 	
+
   resources :kitchen_tools
   resources :recipes
 	root to: 'members#index'
@@ -16,7 +17,8 @@ Rails.application.routes.draw do
 	patch '/recipes/:id' => 'recipes#update'
 	delete '/recipes/:id' => 'recipes#destroy'
 
-	patch '/required_ingredients/:id' => 'required_ingredients#update'
+
+  	post '/required_ingredients' => 'required_ingredients#create'
 
 
   	# ingredients routes

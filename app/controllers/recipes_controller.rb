@@ -20,7 +20,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-   
+   @ingredients = Ingredient.all
+   @recipe = Recipe.find_by(id: params[:id])
   end
 
   # POST /recipes
