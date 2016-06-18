@@ -1,6 +1,22 @@
 <h1>Editing Recipe</h1>
 
-<%= render 'form', recipe: @recipe %>
+
+<%#= <%= render 'form', recipe: @recipe %>
+<% @ingredients.each do |ingredient| %>
+	<%= @ingredient.name %>
+<% end %>
+
+<%= form_tag "/required_ingredients/#{@required_ingredient.id}", method: :patch do %>
+
+<%= hidden_field_tag :ingredient_id, ingredient.id %>
+<%= hidden_field_tag :recipe_id, recipe.id %>
+
+<%= text_field_tag :quantity %>
+<%= text_field_tag :units %>
+
+<%= submit_tag 'Add' %>
+
+<% end %>
 
 <%= link_to 'Show', @recipe %> |
 <%= link_to 'Back', recipes_path %>

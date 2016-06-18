@@ -8,6 +8,16 @@ Rails.application.routes.draw do
 	get '/home' => 'members#index'
 	get '/members/:id' => 'members#show'
 
+	get '/recipes' => 'recipes#index'
+	get '/recipes/new' => 'recipes#new'
+	post '/recipes' => 'recipes#create'
+	get '/recipes/:id' => 'recipes#show'
+	get '/recipes/:id/edit' => 'recipes#edit'
+	patch '/recipes/:id' => 'recipes#update'
+	delete '/recipes/:id' => 'recipes#destroy'
+
+	patch '/required_ingredients/:id' => 'required_ingredients#update'
+
 
   	# ingredients routes
   	# get '/recipe_ingredients' => 'recipe_ingredients#index'
