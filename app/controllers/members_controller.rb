@@ -1,7 +1,18 @@
 class MembersController < ApplicationController
 	
 	def index
-		
+		sort_attribute = params[:sort]
+		search_term = params[:search_term]
+
+		   if sort_attribute
+		     @recipes = Recipe.order(sort_attribute)
+		   else
+		     @recipes = Recipe.all
+		   end
+
+		   if search_term
+		     @recipes = @recipes.where("title LIKE ? OR required_ingredient LIKE ? OR instructions LIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
+		   end
 	end
 
 	def new
