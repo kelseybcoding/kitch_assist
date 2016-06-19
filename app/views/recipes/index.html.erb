@@ -2,6 +2,8 @@
 
 <h1>Recipes</h1>
 
+<section>
+      <div class="row">
 <table>
   <thead>
     <tr>
@@ -16,6 +18,8 @@
 
   <tbody>
     <% @recipes.each do |recipe| %>
+    <div class="col-sm-4">
+            <div class="novelty_single">
       <tr>
         <td><%= recipe.title %></td>
         <td><%= recipe.servings %></td>
@@ -26,10 +30,15 @@
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
+    </div>
     <% end %>
   </tbody>
 </table>
-
+ </div>
+    </section>
 <br>
 
 <%= link_to 'New Recipe', new_recipe_path %>
+
+

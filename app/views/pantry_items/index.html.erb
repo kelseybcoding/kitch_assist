@@ -1,1 +1,19 @@
-<h1>Your Pantry Items</h1>
+<h1><%= current_member.username %>'s Pantry</h1>
+
+<section>
+      <div class="row">
+
+        <% @pantry_items.each do |pantry_item| %>
+
+          <div class="col-sm-4">
+            <div class="novelty_single">
+              <h2><%= pantry_item.ingredient.name %></h2>
+              <h5>Quanity: <%= pantry_item.quantity %></h5>
+              <h5>Units: <%= pantry_item.units %></h5>
+              <h5>Description: <%= pantry_item.ingredient.description %></h5>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </section>

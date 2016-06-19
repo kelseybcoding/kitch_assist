@@ -9,17 +9,11 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
  
   def show
-  	# @ingredient = Ingredient.find(params[:id])
+  	
   end
 
   def new
     @ingredient = Ingredient.new
-  end
-
-  
-  def edit
-    @ingredients = Ingredient.all
-    @member = Member.find_by(id: params[:id])
   end
 
   

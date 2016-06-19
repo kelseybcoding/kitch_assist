@@ -1,4 +1,4 @@
-<h1>Dashboard for Signed-In Member</h1>
+<h1>Dashboard for <em><%=current_member.username %></h1>
 
 <% @recipes.each do |recipe| %>
 	<h2><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></h2>
