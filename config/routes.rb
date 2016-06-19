@@ -9,13 +9,14 @@ Rails.application.routes.draw do
 
 #**********Recipes Routes**********
 
-	get '/recipes' => 'recipes#index'
-	get '/recipes/new' => 'recipes#new'
-	post '/recipes' => 'recipes#create'
-	get '/recipes/:id' => 'recipes#show'
-	get '/recipes/:id/edit' => 'recipes#edit'
-	patch '/recipes/:id' => 'recipes#update'
-	delete '/recipes/:id' => 'recipes#destroy'
+	# get '/recipes' => 'recipes#index'
+	# # get '/recipes' => 'recipes#random'
+	# get '/recipes/new' => 'recipes#new'
+	# post '/recipes' => 'recipes#create'
+	# get '/recipes/:id' => 'recipes#show'
+	# get '/recipes/:id/edit' => 'recipes#edit'
+	# patch '/recipes/:id' => 'recipes#update'
+	# delete '/recipes/:id' => 'recipes#destroy'
 
 
 #**********Create RequiredIngredient Route**********
@@ -24,13 +25,13 @@ Rails.application.routes.draw do
 
 
 #**********Ingredients Routes**********
-  	get '/ingredients' => 'ingredients#index'
-	get '/ingredients/new' => 'ingredients#new'
-	post '/ingredients' => 'ingredients#create'
-	get '/ingredients/:id' => 'ingredients#show'
-	get '/ingredients/:id/edit' => 'ingredients#edit'
-	patch '/ingredients/:id' => 'ingredients#update'
-	delete '/ingredients/:id' => 'ingredients#destroy'
+ #  	get '/ingredients' => 'ingredients#index'
+	# get '/ingredients/new' => 'ingredients#new'
+	# post '/ingredients' => 'ingredients#create'
+	# get '/ingredients/:id' => 'ingredients#show'
+	# get '/ingredients/:id/edit' => 'ingredients#edit'
+	# patch '/ingredients/:id' => 'ingredients#update'
+	# delete '/ingredients/:id' => 'ingredients#destroy'
 
   	
 # these routes are for showing users a login form, logging them in, and logging them out.

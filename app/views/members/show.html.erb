@@ -1,4 +1,9 @@
-<h1>Member Dashboard!!!!!!</h1>
+<h1>Dashboard for Signed-In Member</h1>
 
-
+<% @recipes.each do |recipe| %>
+	<h2><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></h2>
+	<p>Servings: <%= recipe.servings %></p>
+	<p>Prep-Time: <%= recipe.prep_time %></p>
+	<p>Cook-Time: <%= recipe.cook_time %></p>
+<% end %>
 

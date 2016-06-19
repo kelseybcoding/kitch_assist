@@ -25,5 +25,16 @@
   <%= @recipe.instructions %>
 </p>
 
+
+<p>
+<strong>Ingredients</strong>
+<% @recipe.ingredients.each do |ingredient| %>
+    <ul>
+      <li><%= ingredient.name %></li>
+    </ul>
+<% end %>
+</p>
+  
+
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

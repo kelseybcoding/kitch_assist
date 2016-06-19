@@ -14,23 +14,12 @@
   <!--bcrypt code-->
   <div class="navbar-right">
       <% if current_member %>
-        Signed in as <%= current_member.username %> | <%= link_to "Logout", '/logout' %>
+        Signed in as <a href="/members/<%= current_member.id %>"><%= current_member.username %></a> | <%= link_to "Logout", '/logout' %>
       <% else %>
         <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
   
       <% end %>
   </div>
-
-  <div>
-    <%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
-          <div class="form-group">
-            <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search" %>
-          </div>
-
-          <%= submit_tag "Search", class: "btn btn-default" %>
-        <% end %>
-  </div>
-
   
   
     <%= yield %>
