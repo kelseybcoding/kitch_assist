@@ -1,9 +1,15 @@
 <h1>Dashboard for <em><%=current_member.username %></h1>
 
-<% @recipes.each do |recipe| %>
-	<h2><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></h2>
-	<p>Servings: <%= recipe.servings %></p>
-	<p>Prep-Time: <%= recipe.prep_time %></p>
-	<p>Cook-Time: <%= recipe.cook_time %></p>
-<% end %>
+ <div class="row">
+	<% @recipes.each do |recipe| %>
+	<div class="col-md-3">
+          <div class="thumbnail">
+		<h2><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></h2>
+		<p>Servings: <%= recipe.servings %></p>
+		<p>Prep-Time: <%= recipe.prep_time %></p>
+		<p>Cook-Time: <%= recipe.cook_time %></p>
+ </div>
+ </div>
+	<% end %>
+ </div>
 
