@@ -4,10 +4,14 @@ class MembersController < ApplicationController
 		
 	end
 
+	# def edit
+ #    	@ingredients = Ingredient.all
+ #    	@member = Member.find_by(id: params[:id])
+ #  	end
+
 	def show
 		@recipes = Recipe.all
 	end
-
 
 	def new
 		

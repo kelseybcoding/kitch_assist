@@ -17,9 +17,9 @@
         <td><%= ingredient.name %></td>
         <td><%= ingredient.description %></td>
       
-        <td><%= link_to 'Show', ingredient %></td>
-        <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', ingredient %> |</td>
+        <td><%= link_to 'Add to Pantry', "/members/:id/edit" %> | </td>
+        <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

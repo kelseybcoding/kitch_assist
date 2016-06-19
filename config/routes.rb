@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
+
 	resources :ingredients	
 	resources :recipes
 	root to: 'members#index'
 
 	get '/home' => 'members#index'
 	get '/members/:id' => 'members#show'
+	get '/members/:id/edit' => 'members#edit'
 
 #**********Recipes Routes**********
 
 	# get '/recipes' => 'recipes#index'
-	# # get '/recipes' => 'recipes#random'
+	# get '/recipes' => 'recipes#random'
 	# get '/recipes/new' => 'recipes#new'
 	# post '/recipes' => 'recipes#create'
 	# get '/recipes/:id' => 'recipes#show'
@@ -24,8 +26,13 @@ Rails.application.routes.draw do
   	post '/required_ingredients' => 'required_ingredients#create'
 
 
+#**********Pantry Item Routes**********
+
+	get '/pantry_items' => 'pantry_items#index'
+  	post '/add_pantry_items' => 'pantry_items#create'
+
 #**********Ingredients Routes**********
- #  	get '/ingredients' => 'ingredients#index'
+	# get '/ingredients' => 'ingredients#index'
 	# get '/ingredients/new' => 'ingredients#new'
 	# post '/ingredients' => 'ingredients#create'
 	# get '/ingredients/:id' => 'ingredients#show'

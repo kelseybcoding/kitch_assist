@@ -14,11 +14,11 @@
   <!--bcrypt code-->
   <div class="navbar-right">
       <% if current_member %>
-        Signed in as <a href="/members/<%= current_member.id %>"><%= current_member.username %></a> | <%= link_to "Logout", '/logout' %>
+        Signed in as <a href="/members/<%= current_member.id %>"><%= current_member.username %></a> | <%= link_to "Add Items to Your Pantry", "/ingredients" %> | <%= link_to "View Your Pantry", "/pantry_items" %> | <%= link_to "Logout", '/logout' %>
       <% else %>
         <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-  
       <% end %>
+
   </div>
   
   
