@@ -6,14 +6,15 @@
     <% @recipes.each do |recipe| %>
         <div class="col-md-3">
           <div class="thumbnail">
-        <h3><%= recipe.title %></h3>
-        <h4><%= recipe.servings %></h4>
-        <h4><%= recipe.prep_time %></h4>
-        <h4><%= recipe.cook_time %></h4>
-        <p><%= recipe.instructions %></p>
-        <h5><%= link_to 'Show', recipe %></h5>
-        <h5><%= link_to 'Edit', edit_recipe_path(recipe) %></h5>
-        <h5><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+        <h3><%= recipe["recipeName"] %></h3>
+        <p>Ingredients:<%= recipe["ingredients"] %></p>
+        <p><%= recipe["imageUrlBySize"] %></p>
+        <p>Display Name: <%= recipe["sourceDisplayName"] %></p>
+        <p>ID: <%= recipe["id"] %></p>
+        <p>Total Time In Seconds: <%= recipe["totalTimeInSeconds"] %></p>
+        <p>Flavors: <%= recipe["flavors"] %></p>
+        <p>Rating: <%= recipe["rating"] %></p>
+       
           </div>
       </div>
     <% end %>

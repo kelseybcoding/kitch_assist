@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = Unirest.get("http://api.yummly.com/v1/api/recipes?_app_id=b1e4db59&_app_key=4cee9fd1d4c6567ec306fd37ad81b90f&q=onion+soup").body["matches"]
   end
 
   # GET /recipes/1

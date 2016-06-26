@@ -17,6 +17,12 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'seed_dump'
 
+gem 'figaro'
+
+gem 'unirest'
+
+gem 'yummly', '~> 0.0.13'
+
 gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library
