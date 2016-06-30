@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Unirest.get("http://api.yummly.com/v1/api/recipes?_app_id=b1e4db59&_app_key=4cee9fd1d4c6567ec306fd37ad81b90f&q=paleo&maxResult=10&start=10&requirePitcures=true").body["matches"]
+    # @recipes = Unirest.get("http://api.yummly.com/v1/api/recipes?_app_id=b1e4db59&_app_key=4cee9fd1d4c6567ec306fd37ad81b90f&q=paleo&maxResult=10&start=10&requirePitcures=true").body["matches"]
   end
 
   # GET /recipes/1
@@ -28,20 +28,23 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   
-  def create
+  # def create
 
-    # @recipes = Unirest.post("http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=b1e4db59&_app_key=4cee9fd1d4c6567ec306fd37ad81b90f&q=paleo&maxResult=10&start=10&requirePitcures=true").body["matches"]
-    # @recipes.each do |recipe|
-    #   Recipe.create(
-    #     attributes: attributes,
-    #     source_id: id,
-    #     recipe_name: recipeName,
-    #     small_image_urls: smallImageUrls,
-    #     source_display_name: sourceDisplayName,
-    #     total_time: totalTimeInSeconds,
-    #     recipe_name: recipeName,
-    #     criteria: criteria
-    #     )
+  #   @recipes = Unirest.get("http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=b1e4db59&_app_key=4cee9fd1d4c6567ec306fd37ad81b90f&q=paleo&maxResult=10&start=10&requirePitcures=true").body["matches"]
+  #   @recipes.each do |recipe|
+  #     Recipe.create(
+  #       attributes: attributes,
+  #       source_id: id,
+  #       recipe_name: recipeName,
+  #       small_image_urls: smallImageUrls,
+  #       source_display_name: sourceDisplayName,
+  #       total_time: totalTimeInSeconds,
+  #       recipe_name: recipeName,
+  #       criteria: criteria
+  #       )
+
+  #   end
+  # end
     # @recipe = Recipe.new(recipe_params)
 
     # respond_to do |format|
@@ -52,8 +55,6 @@ class RecipesController < ApplicationController
     #     format.html { render :new }
     #     format.json { render json: @recipe.errors, status: :unprocessable_entity }
     #   end
-    end
-  end
 
   # PATCH/PUT /recipes/1
   # PATCH/PUT /recipes/1.json

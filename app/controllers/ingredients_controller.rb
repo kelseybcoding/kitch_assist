@@ -19,13 +19,13 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   
   def create
 
-    @recipes = Unirest.get("http://api.yummly.com/v1/api/recipes?_app_id=b1e4db59&_app_key=4cee9fd1d4c6567ec306fd37ad81b90f&q=paleo&maxResult=50&start=10&requirePitcures=true").body["matches"]
-    @ingredients = @recipes.each do |recipe|
-      recipe["ingredients"].each do |ingredient|
-        Ingredient.create(
-        name: ingredient
-      )
-      end
+    # @recipes = Unirest.get("http://api.yummly.com/v1/api/recipes?_app_id=b1e4db59&_app_key=4cee9fd1d4c6567ec306fd37ad81b90f&q=paleo&maxResult=50&start=10&requirePitcures=true").body["matches"]
+    # @ingredients = @recipes.each do |recipe|
+    #   recipe["ingredients"].each do |ingredient|
+    #     Ingredient.create(
+    #     name: ingredient
+    #   )
+    #   end
     end
 
   end

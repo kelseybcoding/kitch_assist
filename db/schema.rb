@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627023634) do
+ActiveRecord::Schema.define(version: 20160630000728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20160627023634) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "total_time"
-    t.string   "attributes"
+    t.string   "yummly_attributes"
     t.string   "small_image_urls"
     t.integer  "total_time_in_seconds"
     t.string   "recipe_name"
