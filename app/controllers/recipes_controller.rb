@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    
+
   end
 
   # GET /recipes/1
@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   
+
   def create
 
     # @recipes = Unirest.post("http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=&_app_key=&q=paleo&maxResult=10&start=10&requirePitcures=true").body["matches"]
@@ -42,6 +43,8 @@ class RecipesController < ApplicationController
     #     recipe_name: recipeName,
     #     criteria: criteria
     #     )
+
+  
     # @recipe = Recipe.new(recipe_params)
 
     # respond_to do |format|
@@ -52,8 +55,10 @@ class RecipesController < ApplicationController
     #     format.html { render :new }
     #     format.json { render json: @recipe.errors, status: :unprocessable_entity }
     #   end
-    end
+
   end
+
+
 
   # PATCH/PUT /recipes/1
   # PATCH/PUT /recipes/1.json

@@ -21,6 +21,10 @@ gem 'figaro'
 
 gem 'unirest'
 
+
+gem 'yummly'
+
+
 gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library

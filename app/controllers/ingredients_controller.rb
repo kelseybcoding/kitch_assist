@@ -19,8 +19,6 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   
   def create
 
-    
-
   end
   #   @ingredient = Ingredient.new(ingredient_params)
 
