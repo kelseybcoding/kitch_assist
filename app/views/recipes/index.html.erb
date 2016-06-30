@@ -14,6 +14,9 @@
         <p>Total Time In Seconds: <%= recipe["totalTimeInSeconds"] %></p>
         <p>Flavors: <%= recipe["flavors"] %></p>
         <p>Rating: <%= recipe["rating"] %></p>
+
+      <%= link_to 'Save Ingredients', {:controller => 'ingredients'}, {:method => :post} %>
+      <%= link_to 'Save Recipes', {:controller => 'recipes'}, {:method => :post} %>
        
           </div>
       </div>
