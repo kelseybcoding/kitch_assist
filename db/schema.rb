@@ -10,19 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702192433) do
+ActiveRecord::Schema.define(version: 20160703200847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
-    t.integer  "recipe_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "caption"
     t.boolean  "is_primary"
-    t.string   "photo_url"
     t.integer  "bigo_image_id"
+    t.string   "photo_url"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -42,6 +41,17 @@ ActiveRecord::Schema.define(version: 20160702192433) do
     t.text     "bio"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "modified_recipes", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "total_time"
+    t.string   "yield_unit"
+    t.integer  "yield_number"
+    t.text     "instructions"
+    t.string   "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pantry_items", force: :cascade do |t|
@@ -65,18 +75,18 @@ ActiveRecord::Schema.define(version: 20160702192433) do
     t.string   "description"
     t.string   "cuisine"
     t.string   "category"
-    t.string   "image_url"
-    t.string   "photo_url"
     t.integer  "yield_number"
   end
 
   create_table "required_ingredients", force: :cascade do |t|
     t.integer  "ingredient_id"
-    t.integer  "recipe_id"
+    t.integer  "recipeable_id"
     t.decimal  "quantity"
     t.string   "units"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "recipeable_type"
+    t.index ["recipeable_type", "recipeable_id"], name: "index_required_ingredients_on_recipeable_type_and_recipeable_id", using: :btree
   end
 
 end

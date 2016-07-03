@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  total_time: 1
+  yield_unit: MyString
+  yield_number: 1
+  instructions: MyText
+  description: MyString
+
+two:
+  title: MyString
+  total_time: 1
+  yield_unit: MyString
+  yield_number: 1
+  instructions: MyText
+  description: MyString
