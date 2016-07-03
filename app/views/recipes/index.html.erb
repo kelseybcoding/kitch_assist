@@ -6,18 +6,17 @@
     <% @recipes.each do |recipe| %>
         <div class="col-md-3">
           <div class="thumbnail">
-        <h3><%= recipe["recipeName"] %></h3>
-        <p>Ingredients:<%= recipe["ingredients"] %></p>
-        <p><%= recipe["imageUrlBySize"] %></p>
-        <p>Display Name: <%= recipe["sourceDisplayName"] %></p>
-        <p>ID: <%= recipe["id"] %></p>
-        <p>Total Time In Seconds: <%= recipe["totalTimeInSeconds"] %></p>
-        <p>Flavors: <%= recipe["flavors"] %></p>
-        <p>Rating: <%= recipe["rating"] %></p>
+        <h3><%= recipe.title %></h3>
+        <p>Description:<%= recipe.description %></p>
+        <p>Instructions:<%= recipe.instructions %></p>
+        <p><% recipe.ingredients.each do |ingredient| %>
+          <ul>
+            <li><%= ingredient.name %> </li>
+          </ul>
+          <% end %>
 
-      <%= link_to 'Save Ingredients', {:controller => 'ingredients'}, {:method => :post} %>
-      <%= link_to 'Save Recipes', {:controller => 'recipes'}, {:method => :post} %>
-       
+
+        </p>
           </div>
       </div>
     <% end %>

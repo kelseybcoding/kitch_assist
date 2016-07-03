@@ -1,13 +1,14 @@
-<h2>Adding Pantry Items For:</h2>
+<h2>Adding Ingredients For: <%= @recipe.title %></h2>
 
 
+<%#= <%= render 'form', recipe: @recipe %>
 <% @ingredients.each do |ingredient| %>
 	<%= ingredient.name %>
 
-<%= form_tag "/pantry_items", method: :post do %>
+<%= form_tag "/required_ingredients", method: :post do %>
 
 <%= hidden_field_tag :ingredient_id, ingredient.id %>
-<%= hidden_field_tag :current_member_id, current_member.id %>
+<%= hidden_field_tag :recipe_id, @recipe.id %>
 
 <%= text_field_tag :quantity, nil, placeholder: "quantity" %>
 
@@ -17,3 +18,4 @@
 
 <% end %>
 <% end %>
+

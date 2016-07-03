@@ -1,6 +1,5 @@
 # Member.create!([
 #   {first_name: "Kelsey", last_name: "Byers", username: "kelseybcoding", email: "kelseybcoding@gmail.com", password_digest: "$2a$10$uteZGxa2HYq6ycYn63vFKuUQrr3BYLCFJKRFi5Q/EfhHm9.m5I4bm", skill_level: nil, zipcode: nil, bio: nil},
-#   {first_name: "Art", last_name: "VanPaint", username: "artvan", email: "artvan@gmail.com", password_digest: "$2a$10$TN3UE1E8M3el3zFVisPs1uUAUoyRhWF184322ibigS2gkGDoj7HQS", skill_level: nil, zipcode: nil, bio: nil}
 # ])
 
 # Recipe.create!([

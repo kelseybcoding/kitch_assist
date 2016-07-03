@@ -5,6 +5,11 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   def index
     @ingredients = Ingredient.all
+    
+    search_term = params[:search_term]
+    if search_term
+      @ingredients = @ingredients.where("name ILIKE ?", "%#{search_term}%")
+    end
   end
 
  
@@ -20,8 +25,6 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   def create
 
   end
-  #   @ingredient = Ingredient.new(ingredient_params)
-
   #   respond_to do |format|
   #     if @ingredient.save
   #       format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }

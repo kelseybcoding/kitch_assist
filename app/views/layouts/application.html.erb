@@ -10,6 +10,13 @@
 
   <body>
 
+<%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
+          <div class="form-group">
+            <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
+          </div>
+            <%= submit_tag "Search", class: "btn btn-default" %>
+<% end %>
+
   <div>
   <p class="navbar-text navbar-right">
     <% if current_member %>

@@ -9,36 +9,16 @@ Rails.application.routes.draw do
 	get '/members/:id' => 'members#show'
 	get '/members/:id/edit' => 'members#edit'
 
-#**********Recipes Routes**********
-
-	# get '/recipes' => 'recipes#index'
-	# get '/recipes' => 'recipes#random'
-	# get '/recipes/new' => 'recipes#new'
-	# post '/recipes' => 'recipes#create'
-	# get '/recipes/:id' => 'recipes#show'
-	# get '/recipes/:id/edit' => 'recipes#edit'
-	# patch '/recipes/:id' => 'recipes#update'
-	# delete '/recipes/:id' => 'recipes#destroy'
-
 
 #**********Create RequiredIngredient Route**********
 
-  	post '/required_ingredients' => 'required_ingredients#create'
-
+  	# post '/required_ingredients' => 'required_ingredients#create'
 
 #**********Pantry Item Routes**********
 
 	get '/pantry_items' => 'pantry_items#index'
-  	post '/add_pantry_items' => 'pantry_items#create'
-
-#**********Ingredients Routes**********
-	# get '/ingredients' => 'ingredients#index'
-	# get '/ingredients/new' => 'ingredients#new'
-	# post '/ingredients' => 'ingredients#create'
-	# get '/ingredients/:id' => 'ingredients#show'
-	# get '/ingredients/:id/edit' => 'ingredients#edit'
-	# patch '/ingredients/:id' => 'ingredients#update'
-	# delete '/ingredients/:id' => 'ingredients#destroy'
+  	post '/pantry_items' => 'pantry_items#create'
+  	# get '/pantry_items/:id' => 'pantry_items#show'
 
   	
 # these routes are for showing users a login form, logging them in, and logging them out.
