@@ -22,9 +22,7 @@ gem 'figaro'
 
 gem 'unirest'
 
-
-gem 'yummly'
-
+gem 'thematic'
 
 gem 'bootstrap-sass'
 

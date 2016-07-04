@@ -10,6 +10,23 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require theme/bootstrap
+ *= require theme/font-awesome
+ *= require theme/ionicons
+ *= require theme/jquery-ui
+ *= require theme/animate
+ *= require theme/colorbox
+ *= require theme/flexslider
+ *= require theme/jquery.fs.tipper
+ *= require theme/jquery.fullPage
+ *= require theme/mediaelementplayer
+ *= require theme/owl.carousel
+ *= require theme/sidebar-menu
+ *= require theme/smoothproducts
+ *= require theme/YTPlayer
+ *= require theme/style
+ *= require theme/settings-ie8
+ *= require theme/settings
  *= require_tree .
  *= require_self
  */
