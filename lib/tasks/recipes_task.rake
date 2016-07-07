@@ -36,3 +36,19 @@
 # 		end
 # 	end	
 # end
+
+
+# Recipe.all.each do |recipe|
+# 	if !recipe.source_id.nil?
+# 		bigoven_images = Unirest.get("https://api2.bigoven.com/recipe/167511/photos?api_key=#{ENV["app_key"]}", headers:{ "Accept" => "application/json" }).body
+# 	if !bigoven_images["Results"].nil?
+# 		bigoven_images["Results"].each do |bigo_image|
+# 			image = Image.create(
+# 				bigo_image_id: bigo_image["ImageID"],
+# 				photo_url: bigo_image["PhotoUrl"],
+# 				is_primary: bigo_image["IsPrimary"],
+# 				caption: bigo_image["Caption"]
+# 				)
+# 		end
+# 	end
+# end

@@ -1,15 +1,10 @@
 <h1>Dashboard for <em><%=current_member.username %></h1>
 
-	<div class="row">
-		<% @recipes.each do |recipe| %>
-		<div class="col-md-3">
-			<div class="thumbnail">
-		<h2><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></h2>
-		<p>Servings:<%= recipe.yield_number %> <%= recipe.yield_unit %></p>
-			</div>
-		</div>
-		<% end %>
-	</div>
+	
+<% @recipes.each do |recipe| %>
+<h3><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></h3>
+<% end %>
+	
 
 
 
