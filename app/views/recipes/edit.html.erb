@@ -1,0 +1,8 @@
+<h1>Add ingredient to recipe</h1>
+
+<%= form_tag '/require_ingredients', method: :post %>
+	<%= hidden_feild_tag :recipe_id, @recipe.id %>
+
+	
+
+<% end -%>

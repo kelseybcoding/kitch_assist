@@ -72,4 +72,4 @@
 #     def kitchen_tool_params
 #       params.require(:kitchen_tool).permit(:name, :type)
 #     end
-# end
+end
