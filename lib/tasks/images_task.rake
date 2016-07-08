@@ -2,7 +2,8 @@
 # 	desc 'get recipe images'
 # 	task :load => :environment do
 # 		app_key = ENV["app_key"]
-# 		images = Unirest.get("https://api2.bigoven.com/recipe/#{recipe.source_id}/photos?api_key=#{ENV["app_key"]}", headers:{ "Accept" => "application/json" }).body["Results"]
+# 		recipes = 
+# 		images = Unirest.get("https://api2.bigoven.com/recipe/1001/photos?api_key=TlkoHeT5a113Gt474OF89tX7pZGKa619", headers:{ "Accept" => "application/json" }).body["Results"]
 # 		images.each do |image|
 # 			Image.create(
 # 				bigo_image_id: images["ImageID"],
