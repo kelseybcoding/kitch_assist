@@ -10,4 +10,5 @@ class RequiredIngredientsController < ApplicationController
   	# redirect_to '/recipes'
 
   end
+
 end

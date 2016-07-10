@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   	# post '/required_ingredients' => 'required_ingredients#create'
 
+
 #**********Pantry Item Routes**********
 
 	get '/pantry_items' => 'pantry_items#index'
