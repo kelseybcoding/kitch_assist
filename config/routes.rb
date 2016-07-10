@@ -18,8 +18,12 @@ Rails.application.routes.draw do
 #**********Pantry Item Routes**********
 
 	get '/pantry_items' => 'pantry_items#index'
+	get '/pantry_items/new' => 'pantry_items#new'
   	post '/pantry_items' => 'pantry_items#create'
-  	# get '/pantry_items/:id' => 'pantry_items#show'
+  	get '/pantry_items/:id' => 'pantry_items#show'
+  	get '/pantry_items/:id/edit' => 'pantry_items#edit'
+  	patch '/pantry_items/:id' => 'pantry_items#update'
+  	delete '/pantry_items/:id' => 'pantry_items#destroy'
 
   	
 # these routes are for showing users a login form, logging them in, and logging them out.
