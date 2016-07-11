@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     end
 
     if search_term
-      @recipes = @recipes.where("title ILIKE ? OR description ILIKE ? OR instructions ILIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
+      @recipes = @recipes.where("title ILIKE :search_term OR description ILIKE :search_term OR instructions ILIKE :search_term", search_term: "%#{search_term}%")
     end
   end
 

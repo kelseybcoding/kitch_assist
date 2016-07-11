@@ -1,10 +1,15 @@
-<h1><%= current_member.username %>'s Pantry</h1>
+
+<h1><strong><%= current_member.username %>'s Pantry</strong></h1>
+<br>
 
 <div>
   <% @current_member.pantry_items.each do |pantry_item| %>
     <h4><strong><%= pantry_item.ingredient.name %>:</strong> <%= pantry_item.quantity %> <%= pantry_item.units %></h4>
+
+		<%= link_to "Edit", "/pantry_items/#{pantry_item.id}/edit" %>
+		<%= link_to "Delete", "/pantry_items/#{pantry_item.id}", method: :delete, data: { confirm: 'Are you sure?' }%>
+</div>
   <% end %>
-</div
 
 
-          
+

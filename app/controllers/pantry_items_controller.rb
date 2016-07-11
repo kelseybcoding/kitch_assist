@@ -14,6 +14,7 @@ before_filter :authorize
 	end
 
   def new
+    @pantry_item = PantryItem.new
   end
 
   def create
@@ -28,14 +29,17 @@ before_filter :authorize
 
   	end
 
+    def show
+      @pantry_item = PantryItem.find_by(id: params[:id])
+    end
+
     def edit
       @pantry_item = PantryItem.find_by(id: params[:id])
     end
 
     def update
-      pantry_item = PantryItem.find_by(id: params[:id])
-
-      pantry_item.update(
+      @pantry_item = PantryItem.find_by(id: params[:id])
+      @pantry_item.update(
         ingredient_id: params[:ingredient_id],
         quantity: params[:quantity],
         units: params[:units],
@@ -47,8 +51,8 @@ before_filter :authorize
     end
 
     def destroy
-      pantry_item = PantryItem.find(params[:id])
-      pantry_item.destroy
+      @pantry_item = PantryItem.find_by(id: params[:id])
+      @pantry_item.destroy
 
       flash[:warning] = "Item Removed From Your Pantry!"
       redirect_to "/pantry_items"

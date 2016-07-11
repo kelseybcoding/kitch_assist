@@ -5,10 +5,9 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   def index
     @ingredients = Ingredient.all
-    
     search_term = params[:search_term]
     if search_term
-      @ingredients = @ingredients.where("name ILIKE ?", "%#{search_term}%")
+      @ingredients = @ingredients.where("name ILIKE ?", search_term)
     end
   end
 
@@ -37,17 +36,18 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
   
 
  
-  def update
-    respond_to do |format|
-      if @ingredient.update(ingredient_params)
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ingredient }
-      else
-        format.html { render :edit }
-        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @ingredient.update(ingredient_params)
+  #       format.html { redirect_to @ingredient, notice: 'Ingredient was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @ingredient }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @ingredient.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
 
   # def update
   #     recipe = Recipe.find_by(id: params[:id])
@@ -65,23 +65,24 @@ before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   # DELETE /recipes/1
   # DELETE /recipes/1.json
-  def destroy
-    @ingredient.destroy
-    respond_to do |format|
-      format.html { redirect_to ingredients_url, notice: 'Ingredient was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ingredient
-      @ingredient = Ingredient.find(params[:id])
-    end
+  # def destroy
+  #   @ingredient.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to ingredients_url, notice: 'Ingredient was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def ingredient_params
-      params.require(:ingredient).permit(:name)
-    end
+  # private
+  #   # Use callbacks to share common setup or constraints between actions.
+  #   def set_ingredient
+  #     @ingredient = Ingredient.find(params[:id])
+  #   end
+
+  #   # Never trust parameters from the scary internet, only allow the white list through.
+  #   def ingredient_params
+  #     params.require(:ingredient).permit(:name)
+  #   end
 end
 

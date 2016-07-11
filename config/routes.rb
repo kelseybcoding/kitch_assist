@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
 #**********Create RequiredIngredient Route**********
 
+
   	# post '/required_ingredients' => 'required_ingredients#create'
 
 

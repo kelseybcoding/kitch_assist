@@ -6,7 +6,8 @@ class MembersController < ApplicationController
 
 	def edit
     	@ingredients = Ingredient.all
-    	@member = current_member.id
+   		@member = current_member.id
+
   	end
 
 	def show
@@ -34,6 +35,6 @@ class MembersController < ApplicationController
 private
 
 	 def member_params
-	    params.require(:member).permit(:first_name, :last_name, :username, :email, :zipcode, :skill_level, :bio, :password, :password_confirmation)
+	    params.require(:member).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
 	 end
 end

@@ -14,9 +14,9 @@
     <% @ingredients.each do |ingredient| %>
       <tr>
         <td><%= ingredient.name %></td>
-        <td><%= link_to 'Show', ingredient %></td>
-        <td><%= link_to 'Add to Pantry', "/members/:id/edit" %></td>
-        <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <!-- <td><%#= link_to 'Show', ingredient %></td> -->
+        <td><%= link_to 'Add to Pantry', "/members/#{current_member.id}/edit" %></td>
+        <!--<td><%#= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
   </tbody>
     <% end %>
@@ -24,5 +24,4 @@
 
 <br>
 
-<%= link_to 'New Ingredient', new_ingredient_path %>
-
+<%#= link_to 'New Ingredient', new_ingredient_path %>
