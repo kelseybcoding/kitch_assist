@@ -1,0 +1,21 @@
+<h2>Adding Ingredients For: <%= @recipe.title %></h2>
+
+
+<%#= <%= render 'form', recipe: @recipe %>
+<% @ingredients.each do |ingredient| %>
+	<%= ingredient.name %>
+
+<%= form_tag "/required_ingredients", method: :post do %>
+
+<%= hidden_field_tag :ingredient_id, ingredient.id %>
+<%= hidden_field_tag :recipe_id, @recipe.id %>
+
+<%= text_field_tag :quantity, nil, placeholder: "quantity" %>
+
+<%= text_field_tag :units, nil, placeholder: "units" %>
+
+<%= submit_tag 'Add' %>
+
+<% end %>
+<% end %>
+
