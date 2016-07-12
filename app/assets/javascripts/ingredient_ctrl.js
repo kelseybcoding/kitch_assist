@@ -1,52 +1,55 @@
 
-// (function() {
-// 	"use strict";
+(function() {
+	"use strict";
 
-// 	angular.module("app").controller("ingredientCtrl", function($scope,$http){
+	angular.module("app").controller("ingredientCtrl", function($scope,$http){
 		
-// 		$scope.setup = function() {
-// 			$http.get("/api/v1/people.json").then(function(response){
+		$scope.setup = function() {
+			$http.get("/api/v1/ingredients.json").then(function(response){
 				
-// 			$scope.people = response.data;
-// 			});
+			$scope.ingredients = response.data;
+			});
 
-// 		};
+		};
 
-// 		$scope.toggleBioVisible = function(person){
-// 			person.bioVisible = !person.bioVisible
-// 		};
+		$scope.toggleBioVisible = function(ingredient){
+			ingredient.bioVisible = !ingredient.bioVisible
+		};
 
-// 		$scope.addPerson = function(personName, personBio){
-// 				var newPerson = {
-// 					name: personName,
-// 					bio: personBio
-// 			};
+		$scope.addPantryItem = function(pantryItmeName, pantryItemQuantity, pantryItemUnit){
+				var newPantryItem = {
+					name: pantryItemName,
+					quantity: pantryItemQuantity,
+					units: pantryItemUnits
 
-// 			$http.post('/api/v1/people.json', newPerson).then(function(response){
-// 				$scope.people.push(response.data);
-// 				$scope.newName = '';
-// 				$scope.newBio = '';
-// 				$scope.errors = [];
-// 			}, function(error){
-// 				$scope.errors = error.data.errors;
+			};
 
-// 			});	
-// 		};
+			$http.post('/api/v1/pantry_items.json', newPantryItem).then(function(response){
+				$scope.pantry_items.push(response.data);
+				$scope.newName = '';
+				$scope.newQuantity = '';
+				$scope.newUnits = '';
+				$scope.errors = [];
+			}, function(error){
+				$scope.errors = error.data.errors;
 
-// 		$scope.deletePerson = function(index){
-// 			$scope.people.splice(index,1);
-// 		};
+			});	
+		};
 
-// 		$scope.setOrderBy = function(attribute){
+		$scope.deletePantryItem = function(index){
+			$scope.pantry_items.splice(index,1);
+		};
 
-// 			if (attribute != $scope.orderAttribute){
-// 				$scope.descending = false;
-// 			} else {
-// 				$scope.descending = !$scope.descending;
-// 			}
+		$scope.setOrderBy = function(attribute){
 
-// 			$scope.orderAttribute = attribute
-// 		};
-// 	});
-// }());
-// 	
+			if (attribute != $scope.orderAttribute){
+				$scope.descending = false;
+			} else {
+				$scope.descending = !$scope.descending;
+			}
+
+			$scope.orderAttribute = attribute
+		};
+	});
+}());
+	

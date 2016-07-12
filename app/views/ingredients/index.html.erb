@@ -1,45 +1,41 @@
-<!-- <div ng-app="app">
-  {{ 1 + 1 }}
-</div>
-
 <div ng-app="app">
   {{ 1 + 1 }}
-  <div ng-controller="peopleCtrl" ng-init="setup()">
-  <h2>Peeps:</h2>
+  <div ng-controller="ingredientCtrl" ng-init="setup()">
+  <h2>Add Pantry Items</h2>
 
   <div></div>
 
-  <datalist id="names">
-      <option ng-repeat="person in people">{{ person.name }}</option>
+  <datalist id="ingredients">
+      <option ng-repeat="ingredient in ingredients">{{ ingredient.name }}</option>
     </datalist>
 
-  <input ng-model="nameFilter" list="names">
+  <input ng-model="ingredientFilter" list="ingredients">
   <button ng-click="setOrderBy('name')">Order By Name</button>
-  <button ng-click="setOrderBy('bio')">Order bBy Bio</button>
   
-    <div ng-repeat="person in people | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
-      <h2 ng-click="toggleBioVisible(person)">{{ person.name }}</h2>
-      <div ng-if="person.bioVisible">
-        <p>{{ person.bio }}</p>
-      <p ng-click="deletePerson($index)">Delete Person</p>
+    <div ng-repeat="ingredient in ingredients | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
+      <h2 ng-click="toggleBioVisible(ingredient)">{{ ingredient.name }}</h2>
+      <div ng-if="ingredient.bioVisible">
+        <p>{{ ingredient.bio }}</p>
+      <p ng-click="deletePantryItem($index)">Delete Pantry Item</p>
       </div>
     </div>
 
     <div class="form">
     <h3 ng-repeat="error in errors">{{ error }}</h3>
         <h4>Name: <input type="text" ng-model="newName"></h4>
-        <h4>Bio: <input type="text" ng-model="newBio"></h4>
-        <button ng-click="addPerson(newName, newBio)">Add Person</button>
+        <h4>Quantity: <input type="text" ng-model="newQuantity"></h4>
+        <h4>Units: <input type="text" ng-model="newUnits"></h4>
+        <button ng-click="addPantryItem(newName, newQuantity, newUnit)">Add Pantry Item</button>
       </div>
 
-    <h3>Count: {{ people.length }} </h3>
   </div> <!-- end of ng-controller -->
-<!-- </div> --> <!-- end of ng-app -->
+</div> <!-- end of ng-app -->
 
 
 
 <!-- OLD CODE  -->
-<p id="notice"><%= notice %></p>
+<!--
+<p id="notice"><%#= notice %></p>
 
 <h1>Ingredients List</h1>
 
@@ -52,18 +48,16 @@
   </thead>
 
   <tbody>
-    <% @ingredients.each do |ingredient| %>
+    <#% @ingredients.each do |ingredient| %>
       <tr>
-        <td><%= ingredient.name %></td>
-       <!-- <td><%#= link_to 'Show', ingredient %></td> -->
-        <td><%= link_to 'Add to Pantry', "/members/#{current_member.id}/edit" %></td>
-        <!--<td><%#= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td><%#= ingredient.name %></td>
+       # <td><%#= link_to 'Show', ingredient %></td> 
+        <td><%#= link_to 'Add to Pantry', "/members/#{current_member.id}/edit" %></td>
+        # <td><%#= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   </tbody>
-    <% end %>
+    <%# end %>
 </table>
-
 <br>
-
+-->
 <%#= link_to 'New Ingredient', new_ingredient_path %>
- -->
