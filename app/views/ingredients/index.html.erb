@@ -1,3 +1,44 @@
+<!-- <div ng-app="app">
+  {{ 1 + 1 }}
+</div>
+
+<div ng-app="app">
+  {{ 1 + 1 }}
+  <div ng-controller="peopleCtrl" ng-init="setup()">
+  <h2>Peeps:</h2>
+
+  <div></div>
+
+  <datalist id="names">
+      <option ng-repeat="person in people">{{ person.name }}</option>
+    </datalist>
+
+  <input ng-model="nameFilter" list="names">
+  <button ng-click="setOrderBy('name')">Order By Name</button>
+  <button ng-click="setOrderBy('bio')">Order bBy Bio</button>
+  
+    <div ng-repeat="person in people | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
+      <h2 ng-click="toggleBioVisible(person)">{{ person.name }}</h2>
+      <div ng-if="person.bioVisible">
+        <p>{{ person.bio }}</p>
+      <p ng-click="deletePerson($index)">Delete Person</p>
+      </div>
+    </div>
+
+    <div class="form">
+    <h3 ng-repeat="error in errors">{{ error }}</h3>
+        <h4>Name: <input type="text" ng-model="newName"></h4>
+        <h4>Bio: <input type="text" ng-model="newBio"></h4>
+        <button ng-click="addPerson(newName, newBio)">Add Person</button>
+      </div>
+
+    <h3>Count: {{ people.length }} </h3>
+  </div> <!-- end of ng-controller -->
+<!-- </div> --> <!-- end of ng-app -->
+
+
+
+<!-- OLD CODE  -->
 <p id="notice"><%= notice %></p>
 
 <h1>Ingredients List</h1>
@@ -25,3 +66,4 @@
 <br>
 
 <%#= link_to 'New Ingredient', new_ingredient_path %>
+ -->
