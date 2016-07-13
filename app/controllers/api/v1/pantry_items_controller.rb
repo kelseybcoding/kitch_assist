@@ -1,6 +1,6 @@
-class Api::V1::PantryItemController < ApplicationController
+class Api::V1::PantryItemsController < ApplicationController
 	def index
-		@ingredients = Ingredient.all
+		@pantry_items = PantryItem.all
 	end
 
 	def show
@@ -20,4 +20,5 @@ class Api::V1::PantryItemController < ApplicationController
 			render json: { errors: @pantry_item.errors.full_messages }, status: 422
 		end
 	end
+
 end

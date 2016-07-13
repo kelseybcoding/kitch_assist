@@ -6,32 +6,47 @@
   <div></div>
 
   <datalist id="ingredients">
-      <option ng-repeat="ingredient in ingredients">{{ ingredient.name }}</option>
-    </datalist>
+      <option ng-repeat="ingredient in ingredients" value="{{ingredient.id}}">{{ ingredient.name }}</option>
+  </datalist>
 
-  <input ng-model="ingredientFilter" list="ingredients">
+  <input ng-model="ingredientFilter" list="ingredients"> <!--post request inside the filtering?-->
   <button ng-click="setOrderBy('name')">Order By Name</button>
-  
-    <div ng-repeat="ingredient in ingredients | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
-      <h2 ng-click="toggleBioVisible(ingredient)">{{ ingredient.name }}</h2>
-      <div ng-if="ingredient.bioVisible">
-        <p>{{ ingredient.bio }}</p>
-      <p ng-click="deletePantryItem($index)">Delete Pantry Item</p>
-      </div>
-    </div>
 
-    <div class="form">
+  <div class="form">
     <h3 ng-repeat="error in errors">{{ error }}</h3>
-        <h4>Name: <input type="text" ng-model="newName"></h4>
+        <h4>Ingredient ID: <input type="hidden" ng-model="newIngredientId" value="1"></h4>
+        <h4>Current Member ID: <input type="hidden" ng-model="newCurrentMemberId"></h4>
         <h4>Quantity: <input type="text" ng-model="newQuantity"></h4>
         <h4>Units: <input type="text" ng-model="newUnits"></h4>
-        <button ng-click="addPantryItem(newName, newQuantity, newUnit)">Add Pantry Item</button>
+        <button ng-click="addPantryItem(newQuantity, newUnit)">Add Pantry Item</button>
       </div>
+  
+    <div ng-repeat="pantry_item in pantry_items | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
+     <h2 ng-click="toggleVolumeVisible(pantry_item)">{{ pantry_item.name }}</h2>
+      <div ng-if="pantry_item.volumeVisible">
+        <p>Quanity: {{ pantry_item.quantity }}</p>
+        <p>Unit: {{ pantry_item.units }}</p>
+      <h2>{{ pantry_item.name }}</h2>
+      <div>
+      <button ng-click="deletePantryItem($index)">Delete</button>
+      </div>
+    </div>
+    </div>
 
   </div> <!-- end of ng-controller -->
 </div> <!-- end of ng-app -->
 
-
+<!-- <table class="form" style="100%">
+    <tr>
+    <td><h3 ng-repeat="error in errors">{{ error }}</h3></td>
+    <td><h4>Name: <input type="text" ng-model="newName"></h4></td>
+    <td><h4>Style: <input type="text" ng-model="newStyle"></h4></td>
+    <td><h4>Hop: <input type="text" ng-model="newHope"></h4></td>
+    <td><h4>Malts: <input type="text" ng-model="newMalts"></h4></td>
+    <td><h4>Alcohol: <input type="text" ng-model="newAlcohol"></h4></td>
+    <td><button ng-click="addBeer(newName, newStyle, newHop, newMalts, newAlcohol)">Add Beer</button></td>
+    </tr>
+    </table> -->
 
 <!-- OLD CODE  -->
 <!--
