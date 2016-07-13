@@ -9,7 +9,8 @@ class Api::V1::PantryItemsController < ApplicationController
 
 	def create
 		@pantry_item = PantryItem.new(
-			name: params["name"],
+			ingredient_id: params["ingredient_id"],
+			member_id: params["current_member_id"]
 			quantity: params["quantity"],
 			units: params["units"]
 			)
