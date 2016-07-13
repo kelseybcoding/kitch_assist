@@ -1938,6 +1938,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
     background-attachment: fixed;
 }*/
 .bg-image {
+    background-image: url("retina_wood.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
