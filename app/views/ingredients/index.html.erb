@@ -6,21 +6,24 @@
   <div></div>
 
   <datalist id="ingredients">
-      <option ng-repeat="ingredient in ingredients" value="{{ingredient.id}}">{{ ingredient.name }}</option>
+      <option ng-repeat="ingredient in ingredients" value="{{ ingredient.name }}"><input type="hidden" value="{{ ingredient.id }}"></option>
   </datalist>
 
-  <input ng-model="ingredientFilter" list="ingredients"> <!--post request inside the filtering?-->
-  <button ng-click="setOrderBy('name')">Order By Name</button>
+  <input ng-model="ingredientFilter" list="ingredients" placeholder="Select Ingredient"> <!--post request inside the filtering?-->
+ <!--  <button ng-click="setOrderBy('name')">Order By Name</button> -->
 
   <div class="form">
     <h3 ng-repeat="error in errors">{{ error }}</h3>
-        <h4>Ingredient ID: <input type="hidden" ng-model="newIngredientId" value="1"></h4>
-        <h4>Current Member ID: <input type="hidden" ng-model="newCurrentMemberId"></h4>
+        <h4><input type="hidden" ng-model="newIngredientId" value="1"></h4>
+        <h4><input type="hidden" ng-model="newCurrentMemberId"></h4>
         <h4>Quantity: <input type="text" ng-model="newQuantity"></h4>
         <h4>Units: <input type="text" ng-model="newUnits"></h4>
-        <button ng-click="addPantryItem(newQuantity, newUnit)">Add Pantry Item</button>
-      </div>
+        <button ng-click="addPantryItem(newIngredientId, newCurrentMemberId, newQuantity, newUnits)">Add Pantry Item</button>
+  </div>
   
+  <div>
+    <h1><strong><%=current_member.username%>'s Pantry </strong></h1>
+  </div>
     <div ng-repeat="pantry_item in pantry_items | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
      <h2 ng-click="toggleVolumeVisible(pantry_item)">{{ pantry_item.name }}</h2>
       <div ng-if="pantry_item.volumeVisible">

@@ -11,13 +11,18 @@
 			console.log($scope.ingredients);
 			});
 
-/////////// pantry_item ////////////	
+		// 	$scope.togglePantryForm = function(ingredient){
+		// 	ingredient.pantryForm = !ingredient.pantryForm
+		// };
+
+
+                              /////////// pantry_item ////////////	
+
 			$http.get("/api/v1/pantry_items.json").then(function(response){
 				
 			$scope.pantry_items = response.data;
 			console.log($scope.pantry_items);
 			});
-
 
 		};
 /// toggles quantity and unit ///
@@ -25,7 +30,7 @@
 			pantry_item.volumeVisible = !pantry_item.volumeVisible
 		};
 
-
+/// add user's pantry item to DB ///
 		$scope.addPantryItem = function(ingredientId, currentMemberId, pantryItemQuantity, pantryItemUnit){
 				var newPantryItem = {
 					ingredient_id: ingredientId,
@@ -47,6 +52,11 @@
 
 			});	
 		};
+
+
+/// allow user to modify and update already existing pantry_items ///
+//$scope.updatePantryItem = function(ingredientId.......
+
 
 		$scope.deletePantryItem = function(index){
 			$scope.pantry_items.splice(index,1);
