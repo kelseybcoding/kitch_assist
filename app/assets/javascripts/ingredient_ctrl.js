@@ -11,11 +11,6 @@
 			console.log($scope.ingredients);
 			});
 
-		// 	$scope.togglePantryForm = function(ingredient){
-		// 	ingredient.pantryForm = !ingredient.pantryForm
-		// };
-
-
                               /////////// pantry_item ////////////	
 
 			$http.get("/api/v1/pantry_items.json").then(function(response){
@@ -31,12 +26,12 @@
 		};
 
 /// add user's pantry item to DB ///
-		$scope.addPantryItem = function(ingredientId, currentMemberId, pantryItemQuantity, pantryItemUnit){
+		$scope.addPantryItem = function(pantryItemIngredientId, pantryItemCurrentMemberId){
 				var newPantryItem = {
-					ingredient_id: ingredientId,
-					current_member_id: currentMemberId,
-					quantity: pantryItemQuantity,
-					units: pantryItemUnits
+					ingredient_id: pantryItemIngredientId,
+					current_member_id: cpantryItemCurrentMemberId
+					// quantity: pantryItemQuantity,
+					// units: pantryItemUnits
 
 			};
 
@@ -44,8 +39,6 @@
 				$scope.pantry_items.push(response.data);
 				$scope.newIngredientId = '';
 				$scope.newCurrentMemberId ='';
-				$scope.newQuantity = '';
-				$scope.newUnits = '';
 				$scope.errors = [];
 			}, function(error){
 				$scope.errors = error.data.errors;
@@ -54,8 +47,24 @@
 		};
 
 
-/// allow user to modify and update already existing pantry_items ///
-//$scope.updatePantryItem = function(ingredientId.......
+/// UPDATE PANTRY ITEM ///
+$scope.updatePantryItem = function(pantryItemQuantity, pantryItemUnits){
+				var changePantryItem = {
+					quantity: pantryItemQuantity,
+					units: pantryItemUnits
+
+			};
+
+			$http.patch('/api/v1/pantry_items/:id.json', changePantryItem).then(function(response){
+				$scope.pantry_items.push(response.data);
+				$scope.changeQuantity = '';
+				$scope.changeUnits = '';
+				$scope.errors = [];
+			}, function(error){
+				$scope.errors = error.data.errors;
+
+			});	
+		};
 
 
 		$scope.deletePantryItem = function(index){
@@ -75,3 +84,10 @@
 	});
 }());
 	
+///// CAN I PUT A $scope.addPantryItem FUNCTION HERE AND POST TO PANTRY ITEMS WITH ONLY THE HIDDEN CURRENT MEMBER NAME AND INGREDIENT ID
+/// THEN DO AN UPATE PANTRY ITEM ACTION WITH THE PATCH REQUEST FOR QUANTITY AND UNIT
+
+
+		// 	$scope.togglePantryForm = function(ingredient){
+		// 	ingredient.pantryForm = !ingredient.pantryForm
+		// };

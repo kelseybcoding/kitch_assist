@@ -3,8 +3,8 @@ class Api::V1::PantryItemsController < ApplicationController
 		@pantry_items = PantryItem.all
 	end
 
-	def show
-		@pantry_item = PantryItem.find(params[:id])
+	def new
+		
 	end
 
 	def create
@@ -22,4 +22,19 @@ class Api::V1::PantryItemsController < ApplicationController
 		# end
 	end
 
+	def show
+		@pantry_item = PantryItem.find(params[:id])
+	end
+
+	def edit
+		
+	end
+
+	def update
+		
+	end
+
+	def destroy
+		
+	end
 end
