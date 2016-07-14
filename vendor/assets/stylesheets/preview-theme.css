@@ -1,0 +1,9 @@
+body {
+	background:#363636;background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;}
+#preview { height:100%}
+#preview .intro-text-sm {padding-top: 80px;padding-bottom: 0px;}
+
+@media(min-width:768px) {
+header .intro-text-sm {padding-top: 60px;padding-bottom:0px;}
+}
+
