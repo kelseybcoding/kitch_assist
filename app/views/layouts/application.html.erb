@@ -51,7 +51,7 @@
       <ul class="nav nav-justified">
         <li class="hidden"> <a href="#page-top"></a> </li>
         <% if current_member %>
-        <li>Signed in as <a href="/members/<%= current_member.id %>" class="navbar-link"><%= current_member.username %></a></li>
+        <li><a href="/members/<%= current_member.id %>" class="navbar-link"><%= current_member.username %></a></li>
         <% end %>
 
             <% if current_member %>
