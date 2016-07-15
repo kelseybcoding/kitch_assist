@@ -1,22 +1,21 @@
 <div ng-app="app">
   {{ 1 + 1 }}
-  <div ng-controller="ingredientCtrl" ng-init="setup()">
+  <div ng-controller="ingredientCtrl" ng-init="setup(<%= current_member.id %>)">
   <h2>Add Pantry Items</h2>
 
   <div></div>
 
   <datalist id="ingredients">
-      <option ng-repeat="ingredient in ingredients" value="{{ ingredient.name }}"><input type="hidden" value="{{ ingredient.id }}"></option>
+      <option ng-repeat="ingredient in autoCompleteIngredients">{{ ingredient.name }}</option>
   </datalist>
 
-  <input ng-model="ingredientFilter" list="ingredients" placeholder="Select Ingredient"> <!--post request inside the filtering?-->
- <!--  <button ng-click="setOrderBy('name')">Order By Name</button> -->
+  <input ng-model="newIngredientId" list="ingredients" placeholder="Select Ingredient" ng-keyup="autoCompleteIngredientContent(newIngredientId)"> </input>
 
   <div class="form">
       <h3 ng-repeat="error in errors">{{ error }}</h3>
-          <h4><input type="hidden" ng-model="newIngredientId" value="{{ ingredient.id }}"></h4>
-          <h4><input type="hidden" ng-model="newCurrentMemberId" value="{{ current_member.id }}"></h4>
-          <button ng-click="addPantryItem(newIngredientId, newCurrentMemberId)">Add Ingredient To Pantry</button>
+          <h4>Quantity: <input type="text" ng-model="newQuantity"></h4>
+          <h4>Units: <input type="text" ng-model="newUnits"></h4>
+          <button ng-click="addPantryItem(newIngredientId, newQuantity, newUnits)">Add Ingredient To Pantry</button>
   </div>
   
   <div>
@@ -25,12 +24,10 @@
     <div ng-repeat="pantry_item in pantry_items | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
      <h2 ng-click="toggleVolumeVisible(pantry_item)">{{ pantry_item.name }}</h2>
       <div ng-if="pantry_item.volumeVisible">
-      <p>Quantity: {{ pantry_item.quantity }}</p>
-      <p>Units: {{ pantry_item.units }}</p>
+      <h3>Amount: {{ pantry_item.quantity }} {{ pantry_item.units }}</h3>
+      <br>
         <div class="form">
             <h3 ng-repeat="error in errors">{{ error }}</h3>
-                <!-- <h4><input type="hidden" ng-model="newIngredientId" value="1"></h4>
-                <h4><input type="hidden" ng-model="newCurrentMemberId"></h4> -->
                 <h4>Quantity: <input type="text" ng-model="changeQuantity"></h4>
                 <h4>Units: <input type="text" ng-model="changeUnits"></h4>
                 <button ng-click="updatePantryItem(changeQuantity, changeUnits)">Update Pantry Item</button>
@@ -44,17 +41,7 @@
   </div> <!-- end of ng-controller -->
 </div> <!-- end of ng-app -->
 
-<!-- <table class="form" style="100%">
-    <tr>
-    <td><h3 ng-repeat="error in errors">{{ error }}</h3></td>
-    <td><h4>Name: <input type="text" ng-model="newName"></h4></td>
-    <td><h4>Style: <input type="text" ng-model="newStyle"></h4></td>
-    <td><h4>Hop: <input type="text" ng-model="newHope"></h4></td>
-    <td><h4>Malts: <input type="text" ng-model="newMalts"></h4></td>
-    <td><h4>Alcohol: <input type="text" ng-model="newAlcohol"></h4></td>
-    <td><button ng-click="addBeer(newName, newStyle, newHop, newMalts, newAlcohol)">Add Beer</button></td>
-    </tr>
-    </table> -->
+
 
 <!-- OLD CODE  -->
 <!--

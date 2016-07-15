@@ -43,6 +43,7 @@ namespace :api do
 	namespace :v1 do
 		
 		get '/ingredients' => 'ingredients#index'
+		get '/ingredients/search' => 'ingredients#search'
 
 		get '/pantry_items' => 'pantry_items#index'
 		get '/pantry_items/new' => 'pantry_items#new'

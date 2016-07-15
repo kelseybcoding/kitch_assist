@@ -8,18 +8,20 @@ class Api::V1::PantryItemsController < ApplicationController
 	end
 
 	def create
-		# @pantry_item = PantryItem.new(
-		# 	ingredient_id: params["ingredient_id"],
-		# 	member_id: params["current_member_id"]
-		# 	quantity: params["quantity"],
-		# 	units: params["units"]
-		# 	)
 
-		# if @pantry_item.save
-		# 	render :index
-		# else
-		# 	render json: { errors: @pantry_item.errors.full_messages }, status: 422
-		# end
+		ingredient = Ingredient.find_by(name: params[:ingredient_id])
+		@pantry_item = PantryItem.new(
+			ingredient_id: ingredient.id,
+			member_id: params["current_member_id"],
+			quantity: params["quantity"],
+			units: params["units"]
+			)
+
+		if @pantry_item.save
+			render :show
+		else
+			render json: { errors: @pantry_item.errors.full_messages }, status: 422
+		end
 	end
 
 	def show
@@ -31,10 +33,17 @@ class Api::V1::PantryItemsController < ApplicationController
 	end
 
 	def update
-		
+		ingredient = Ingredient.find_by(name: params[:ingredient_id])
+		@pantry_item = PantryItem.update(
+			ingredient_id: ingredient.id,
+			member_id: params["current_member_id"],
+			quantity: params["quantity"],
+			units: params["units"]
+			)
 	end
 
 	def destroy
-		
+		@pantry_item = PantryItem.find_by(id: params[:id])
+		@pantry_item.destroy
 	end
 end
