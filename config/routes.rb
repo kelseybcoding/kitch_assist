@@ -52,6 +52,8 @@ namespace :api do
 		get '/pantry_items/:id/edit' => 'pantry_items#edit'
 		patch '/pantry_items/:id' => 'pantry_items#update'
   		delete '/pantry_items/:id' => 'pantry_items#destroy'
+
+  		get '/recipes' => 'recipes#search'
 	end
 end
 end

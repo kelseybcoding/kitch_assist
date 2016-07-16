@@ -55,6 +55,25 @@
 			pantry_item.volumeVisible = !pantry_item.volumeVisible
 		};
 
+		$scope.searchRecipesByPantry = function(){
+			// $scope.pantry_items
+			var selectedIds = "";
+			for (var i = 0; i < $scope.pantry_items.length; i++){
+				if($scope.pantry_items[i].selected){
+					if(selectedIds !== ""){
+						selectedIds += ","
+					}
+					selectedIds += $scope.pantry_items[i].id;
+				}
+			}
+
+			$http.get("/api/v1/recipes.json?pantry_ids=" + selectedIds).then(function(response){
+				console.log(response.data)
+			});
+		};
+
+
+
 /// UPDATE PANTRY ITEM ///
 		// $scope.updatePantryItem = function(pantryItemQuantity, pantryItemUnits){
 		// 		var changePantryItem = {
@@ -89,6 +108,8 @@
 
 			$scope.orderAttribute = attribute
 		};
+
+		window.scope = $scope;
 	});
 }());
 	

@@ -1,5 +1,4 @@
 <div ng-app="app">
-  {{ 1 + 1 }}
   
   <div ng-controller="ingredientCtrl" ng-init="setup(<%= current_member.id %>)">
   <h2>Add Pantry Items</h2>
@@ -23,12 +22,12 @@
     <h1><strong><%=current_member.username%>'s Pantry </strong></h1>
   </div>
 
-    <div ng-repeat="pantry_item in pantry_items | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
-        <label class="checkbox" for="{{ pantry_item.name }}">
-          <input type="checkbox" value="{{ pantry_item.id }}">
-        </label>
-     <h2 ng-click="toggleVolumeVisible(pantry_item)">{{ pantry_item.name }}</h2>
-      <div ng-if="pantry_item.volumeVisible">
+  <div ng-repeat="pantry_item in pantry_items | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
+    <label class="checkbox" for="{{ pantry_item.name }}">
+      <input ng-model="pantry_item.selected" type="checkbox" value="{{ pantry_item.id }}">
+    </label>
+    <h2 ng-click="toggleVolumeVisible(pantry_item)">{{ pantry_item.name }}</h2>
+    <div ng-if="pantry_item.volumeVisible">
       <h3>Amount: {{ pantry_item.quantity }} {{ pantry_item.units }}</h3>
       <br>
        <!--  <div class="form">
@@ -36,12 +35,14 @@
                 <h4>Quantity: <input type="text" ng-model="changeQuantity"></h4>
                 <h4>Units: <input type="text" ng-model="changeUnits"></h4>
                 <button ng-click="updatePantryItem(changeQuantity, changeUnits)">Update Pantry Item</button>
-          </div> -->
+              </div> -->
       <div>
-      <button ng-click="deletePantryItem($index)">Delete</button>
+        <button ng-click="deletePantryItem($index)">Delete</button>
       </div>
     </div>
-    </div>
+  </div>
+  <button ng-click="searchRecipesByPantry()">Search by Pantry Items</button>
+  {{ 1 + 1 }}
 
   </div> <!-- end of ng-controller -->
 </div> <!-- end of ng-app -->
