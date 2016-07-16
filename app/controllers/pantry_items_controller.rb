@@ -34,7 +34,7 @@ before_filter :authorize
     end
 
     def edit
-      @pantry_item = PantryItem.find_by(id: params[:id])
+      # @pantry_item = PantryItem.find_by(id: params[:id])
     end
 
     def update

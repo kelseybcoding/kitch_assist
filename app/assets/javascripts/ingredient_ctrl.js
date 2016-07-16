@@ -19,10 +19,6 @@
 
 			$scope.current_member_id = memberId;
 		};
-/// toggles quantity and unit ///
-		$scope.toggleVolumeVisible = function(pantry_item){
-			pantry_item.volumeVisible = !pantry_item.volumeVisible
-		};
 
 /// add user's pantry item to DB ///
 		$scope.addPantryItem = function(pantryItemIngredientId, pantryItemQuantity, pantryItemUnits){
@@ -54,16 +50,20 @@
 			});
 		};
 
+/// toggles quantity and unit ///
+		$scope.toggleVolumeVisible = function(pantry_item){
+			pantry_item.volumeVisible = !pantry_item.volumeVisible
+		};
 
 /// UPDATE PANTRY ITEM ///
-$scope.updatePantryItem = function(pantryItemQuantity, pantryItemUnits){
+		$scope.updatePantryItem = function(pantryItemQuantity, pantryItemUnits){
 				var changePantryItem = {
 					quantity: pantryItemQuantity,
 					units: pantryItemUnits
 
 			};
 
-			$http.patch('/api/v1/pantry_items/:id.json', changePantryItem).then(function(response){
+			$http.patch('/api/v1/pantry_items/#{pantry_item.id}.json', changePantryItem).then(function(response){
 				$scope.pantry_items.push(response.data);
 				$scope.changeQuantity = '';
 				$scope.changeUnits = '';
