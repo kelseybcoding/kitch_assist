@@ -42,7 +42,7 @@
     <!-- Navigation Links -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <div class="navbar-left"><%= image_tag("kitchassist_logo_white_small.png") %></div>
+            <div class="navbar-left"><%= image_tag("kitchassist_logo_white_small.png", size: "150x54") %></div>
 <ul class="nav nav-tabs">
             <% if current_member %>
               <li role="presentation"><%= link_to "/members/#{current_member.id}", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i><%= current_member.username %></li>
@@ -58,12 +58,16 @@
             <% end %>          
         
             <% if current_member %>
-                <%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
-                  <div class="form-group">
-                    <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
-                  </div>
-                <%= submit_tag "Search", class: "btn btn-default" %>
-                <% end %>
+               
+               
+                   <%= form_tag '/recipes', method: :get do %>
+                  <div class="form-inline" align="right">
+                    
+                       <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
+                       <%= submit_tag "Search", class: "btn btn-success" %>
+                    
+                     </div>
+                     <% end %>
             <% end %>
      
 </ul>
