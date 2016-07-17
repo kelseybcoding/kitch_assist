@@ -28,45 +28,36 @@
     <![endif]-->
 </head>
 
-<body class="index" id="page-top">
-<!-- Loader -->
-<div class="se-pre-con"></div>
-<!-- /.Loader -->
+<body>
 
 <!-- Navigation -->
-<nav id="navigation-single" class="navbar navbar-default nav-justified navbar-fixed-top">
+<nav class="navbar navbar-default nav-justified navbar-fixed-top">
   <div class="container"> 
-    <!-- Brand and toggle are grouped for better mobile display -->
-    
-    <div class="navbar-header page-scroll">
-      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-    </div>
-    <!-- Navigation Links -->
-<!-- -->
-<div> 
-    </div>
- <!-- -->   
-    <div class="collapse navbar-collapse" id=
-            "bs-example-navbar-collapse-1">
-      <ul class="nav nav-justified">
-        <li class="hidden"> <a href="#page-top"></a> </li>
-        <% if current_member %>
-        <li><a href="/members/<%= current_member.id %>" class="navbar-link"><%= current_member.username %></a></li>
-        <% end %>
 
+    <!-- Brand and toggle are grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+
+    <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <div class="navbar-left" class="small"><%= image_tag("kitchassist_logo_white_small.png") %></div>
+<ul class="nav nav-tabs">
             <% if current_member %>
-              <li><%= link_to "Add to Pantry", "/ingredients", class: "page-scroll" %></li>
-              <li><%= link_to "Pantry", "/pantry_items", class: "page-scroll" %></li>
-              <li><%= link_to "Logout", '/logout', class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to "/members/#{current_member.id}", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i><%= current_member.username %></li>
+              <% end %>
+              <li role="presentation"><%= link_to "Add to Pantry", "/ingredients", class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to "Pantry", "/pantry_items", class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to "Logout", '/logout', class: "page-scroll" %></li>
     
             <% else %>
-              <li><%= link_to 'Login', '/login', class: "page-scroll" %></li>
-              <li><%= link_to 'Signup', '/signup', class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to "/", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i></li><% end %>
+              <li role="presentation"><%= link_to 'Login', '/login', class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to 'Signup', '/signup', class: "page-scroll" %></li>
             <% end %>          
         
-<!-- SEARCH BAR -->
             <% if current_member %>
-              <li>
                 <%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
                   <div class="form-group">
                     <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
@@ -74,20 +65,29 @@
                 <%= submit_tag "Search", class: "btn btn-default" %>
                 <% end %>
             <% end %>
-              </li>
-        </ul>
+     
+</ul>
 
-    </div>
-    <!-- /.navbar-collapse --> 
-  </div>
-  <!-- /.container-fluid --> 
-</nav>
-<!-- /.Navigation --> 
+      </div> <!-- .navbar-collapse -->
+  </div> <!-- /.container-fluid -->
+   
+</nav> <!-- /.Navigation --> 
+
 
 
 <%= yield %>
 
 <!-- Footer -->
+<!-- <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"> <span class="copyright">Copyright &copy;<a href="http://designify.me/" target="_blank">Designify.me</a></span> </div>
+    </div>
+  </div> -->
+  <!-- /.container --> 
+<!-- </footer> -->
+<!-- /.Footer --> 
+
 
 
 

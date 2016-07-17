@@ -1,11 +1,56 @@
-<h3>Welcome to KitchAssist!</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>KitchAssist</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
 
-<div>	
-<%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
-  <div class="form-group">
-    <p><%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %></p>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<!-- Favicons -->
+<!-- <link rel="shortcut icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+ -->
+
+<link href='https://fonts.googleapis.com/css?family=Catamaran:400,600,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- Section Blank Content -->
+<section id="blank">
+  <div class="container" style="position : fixed;">
+    <div class="row">
+      <div class="col-md-8" >
+        <%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
+      	<div class="form-group">
+          <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
+        </div>
+          <%= submit_tag "Search", class: "btn btn-default" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-<p><%= submit_tag "Search", class: "btn btn-default" %></p>
-<% end %>
-</div>
+</section>
+<!-- /.Section Blank Content -->
+	
+
+<%= yield %>
+
+</body>
+</html>
+
 

@@ -9,6 +9,8 @@ body {overflow-x: hidden;font-family: 'Catamaran', sans-serif; Helvetica, Arial,
 .text-muted {color: #777;}
 .text-primary {color: #fed136;}
 
+.center-search {margin: 0 auto;}
+
 p {font-size: 16px;line-height: 1.75;}
 p.large {font-size: 16px;}
 
@@ -19,6 +21,8 @@ a:hover, a:focus, a:active, a.active {color: #f9bf3b;text-decoration: none;}
 h1, h2, h3, h4, h5, h6 {text-transform: uppercase;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-weight: 700;}
 
 .img-centered {margin: 0 auto;}
+
+.search-centered {margin: 0 auto;}
 
 /* Loader 
 ================================ */
@@ -82,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {text-transform: uppercase;font-family: 'Catamaran', sans
 .navbar-default .nav-justified>.active>a:hover, .navbar-default .nav-justified>.active>a:focus {color: #363636;	background-color: transparent;}
 
 @media(min-width:768px) {
-.navbar-default {padding: 15px 0;border: 0;background-color: #f9bf3b;color: #FFF;-webkit-transition: padding .3s;-moz-transition: padding .3s;transition: padding .3s;}
+.navbar-default {/*padding: 15px*/ 0;border: 0;background-color: #f9bf3b;color: #FFF;-webkit-transition: padding .3s;-moz-transition: padding .3s;transition: padding .3s;}
 .navbar-default .navbar-brand {font-size: 2em;-webkit-transition: all .3s;-moz-transition: all .3s;transition: all .3s;}
 .navbar-default .nav-justified>.active>a {border-radius: 3px;}
 .navbar-default.navbar-shrink {

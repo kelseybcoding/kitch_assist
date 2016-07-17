@@ -1,13 +1,13 @@
 body {
-  background-color: #fff;
+  background-image: url("vk-rees-food-photography-07.png");
+  background-size: cover;
+  background-attachment: fixed;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin-top: 200px;
-  margin-bottom: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
+  padding-top: 70px;
+  margin: 33px;
 }
 
 p, ol, ul, td {
@@ -90,4 +90,5 @@ div {
 label {
   display: block;
 }
+
 
