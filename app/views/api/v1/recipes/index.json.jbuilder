@@ -4,4 +4,5 @@ json.array! @recipes.each do | recipe |
 	json.total_time recipe.total_time
 	json.yield_number recipe.yield_number
 	json.yield_unit recipe.yield_unit
+	json.description recipe.description
 end
