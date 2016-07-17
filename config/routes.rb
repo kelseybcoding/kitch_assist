@@ -37,5 +37,23 @@ Rails.application.routes.draw do
 	get '/signup' => 'members#new'
 	post '/members' => 'members#create'
 
-#-----------------------------------------------------------------
+#--
+  	
+namespace :api do
+	namespace :v1 do
+		
+		get '/ingredients' => 'ingredients#index'
+		get '/ingredients/search' => 'ingredients#search'
+
+		get '/pantry_items' => 'pantry_items#index'
+		get '/pantry_items/new' => 'pantry_items#new'
+		post '/pantry_items' => 'pantry_items#create'
+		get '/pantry_items/:id' => 'pantry_items#show'
+		get '/pantry_items/:id/edit' => 'pantry_items#edit'
+		patch '/pantry_items/:id' => 'pantry_items#update'
+  		delete '/pantry_items/:id' => 'pantry_items#destroy'
+
+  		get '/recipes' => 'recipes#search'
+	end
+end
 end
