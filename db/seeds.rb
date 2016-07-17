@@ -1,3 +1,7 @@
+# Member.create!([
+#   {first_name: "Kelsey", last_name: "Byers", username: "kelseybcoding", email: "kelseybcoding@gmail.com", password_digest: "$2a$10$uteZGxa2HYq6ycYn63vFKuUQrr3BYLCFJKRFi5Q/EfhHm9.m5I4bm", skill_level: nil, zipcode: nil, bio: nil},
+# ])
+
 # Ingredient.create!([
 #   {name: "RiceSelect® Original Orzo"},
 #   {name: "chicken stock"},
