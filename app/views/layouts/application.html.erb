@@ -1,52 +1,97 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>KitchAssist</title>
-    <%= csrf_meta_tags %>
-
+<html lang="en">
+<head>
+<title>KitchAssist</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  </head>
+    <%= csrf_meta_tags %>
 
-  <body>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<!-- Favicons -->
+<!-- <link rel="shortcut icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+ -->
 
-<%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
-          <div class="form-group">
-            <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
-          </div>
-            <%= submit_tag "Search", class: "btn btn-default" %>
-<% end %>
+<link href='https://fonts.googleapis.com/css?family=Catamaran:400,600,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-  <div>
-  <p class="navbar-text navbar-right">
-    <% if current_member %>
-      | Signed in as <a href="/members/<%= current_member.id %>" class="navbar-link"><%= current_member.username %></a>
-    <% end %>
-  </p>
-  </div>
-  <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></span></a>
-          <ul class="dropdown-menu" role="menu">
-          
-          <li class="divider"></li>
+<body>
 
+<!-- Navigation -->
+<nav class="navbar navbar-default nav-justified navbar-fixed-top">
+  <div class="container"> 
+
+    <!-- Brand and toggle are grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+
+    <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <div class="navbar-left"><%= image_tag("kitchassist_logo_white_small.png") %></div>
+<ul class="nav nav-tabs">
             <% if current_member %>
-              <li><%= link_to "Add Items to Your Pantry", "/ingredients" %></li>
-              <li><%= link_to "View Your Pantry", "/pantry_items" %></li>
-              <li><%= link_to "Logout", '/logout' %></li>
+              <li role="presentation"><%= link_to "/members/#{current_member.id}", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i><%= current_member.username %></li>
+              <% end %>
+              <li role="presentation"><%= link_to "Add to Pantry", "/ingredients", class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to "Pantry", "/pantry_items", class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to "Logout", '/logout', class: "page-scroll" %></li>
     
             <% else %>
-              <li><%= link_to 'Login', '/login' %></li>
-              <li><%= link_to 'Signup', '/signup' %></li>
+              <li role="presentation"><%= link_to "/", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i></li><% end %>
+              <li role="presentation"><%= link_to 'Login', '/login', class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to 'Signup', '/signup', class: "page-scroll" %></li>
             <% end %>          
-            
-          </ul>
-        </li>
-      </ul>
-    </div>
-  
-    <%= yield %>
-  </body>
-</html>
+        
+            <% if current_member %>
+                <%= form_tag '/recipes', method: :get, class: "navbar-form navbar-right" do %>
+                  <div class="form-group">
+                    <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
+                  </div>
+                <%= submit_tag "Search", class: "btn btn-default" %>
+                <% end %>
+            <% end %>
+     
+</ul>
 
+      </div> <!-- .navbar-collapse -->
+  </div> <!-- /.container-fluid -->
+   
+</nav> <!-- /.Navigation --> 
+
+
+
+<%= yield %>
+
+<!-- Footer -->
+<!-- <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"> <span class="copyright">Copyright &copy;<a href="http://designify.me/" target="_blank">Designify.me</a></span> </div>
+    </div>
+  </div> -->
+  <!-- /.container --> 
+<!-- </footer> -->
+<!-- /.Footer --> 
+
+
+
+
+
+
+</body>
+</html>

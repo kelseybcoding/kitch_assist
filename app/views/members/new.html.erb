@@ -1,13 +1,17 @@
-<h1>Signup!</h1>
+<div>
+
+<h1>Signup for KitchAssist!</h1>
 
 <%= form_for :member, url: '/members' do |f| %>
 
-  First Name: <%= f.text_field :first_name %><br>
-  Last Name: <%= f.text_field :last_name %><br>
-  Username: <%= f.text_field :username %><br>
-  Email: <%= f.text_field :email %><br>
-  Password: <%= f.password_field :password %><br>
-  Password Confirmation: <%= f.password_field :password_confirmation %><br>
-  <%= f.submit "Submit" %>
+  <p>First Name: <%= f.text_field :first_name %></p>
+  <p>Last Name: <%= f.text_field :last_name %></p>
+  <p>Username: <%= f.text_field :username %></p>
+  <p>Email: <%= f.text_field :email %></p>
+  <p>Password: <%= f.password_field :password %></p>
+  <p>Password Confirmation: <%= f.password_field :password_confirmation %></p>
+  <p><%= f.submit "Submit" %></p>
 
 <% end %>
+
+</div>
