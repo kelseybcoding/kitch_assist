@@ -42,7 +42,7 @@
     <!-- Navigation Links -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <div class="navbar-left" class="small"><%= image_tag("kitchassist_logo_white_small.png") %></div>
+            <div class="navbar-left"><%= image_tag("kitchassist_logo_white_small.png") %></div>
 <ul class="nav nav-tabs">
             <% if current_member %>
               <li role="presentation"><%= link_to "/members/#{current_member.id}", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i><%= current_member.username %></li>
