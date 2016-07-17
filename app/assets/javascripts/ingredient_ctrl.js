@@ -29,7 +29,7 @@
 					units: pantryItemUnits
 
 			};
-		console.log(newPantryItem);
+		
 
 			$http.post('/api/v1/pantry_items.json', newPantryItem).then(function(response){
 				$scope.pantry_items.push(response.data);
