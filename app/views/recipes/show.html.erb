@@ -1,34 +1,71 @@
-<p id="notice"><%= notice %></p>
-
-<h1>
-  <strong><%= @recipe.title %></strong>
-</h1>
-
-<p>
-  <strong>Yield:</strong>
-  <%= @recipe.yield_number %> <%= @recipe.yield_unit %>
-</p>
-
-<p>
-  <strong>Total Time:</strong>
-  <%= @recipe.total_time %>
-</p>
-
-<p>
-  <strong>Instructions:</strong>
-  <%= @recipe.instructions %>
-</p>
 
 
-<p>
-<strong>Ingredients</strong>
-<% @recipe.ingredients.each do |ingredient| %>
-    <ul>
-      <li> <%= ingredient.name %> </li>
-    </ul>
-<% end %>
-</p>
+<!-- <strong>Ingredients</strong> -->
+<%# @recipe.ingredients.each do |ingredient| %>
+    <!-- <ul> -->
+      <!-- <li> <%#= ingredient.name %> </li> -->
+    <!-- </ul> -->
+<%# end %>
+<!-- </p> -->
   
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%#= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%#= link_to 'Back', recipes_path %> -->
+
+
+
+<!-- About Section -->
+<section id="about">
+  <div class="container"> 
+    <!-- Heading and Subheading -->
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="fadeInDown wow">
+          <p id="notice"><%= notice %></p>
+          <h2 class="section-heading"><span class=
+                    "orange-accent"><strong><%= @recipe.title %></strong></span></h2>
+        <p class="section-subheading"><%= @recipe.description %></p>
+        </div>
+      </div>
+    </div>
+    <!-- /.Heading and Subheading --> 
+    
+    <!-- Border -->
+    <div class="bounceIn wow">
+      <!-- <div class="border"> -->
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p class="mrgn30-btm"><%= image_tag("border.svg", size: "177x26", class: "img-responsive center-block") %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.Border --> 
+    
+    <!-- Description -->
+    <div class="fadeInUp wow">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+          <p><strong>Yield:</strong> <%= @recipe.yield_number %> <%= @recipe.yield_unit %></p>
+          <p class="mrgn20-top"><strong>Total Time:</strong> <%= @recipe.total_time %> minutes</p>
+          <p class="mrgn20-top"><strong>Instructions:</strong> <%= @recipe.instructions %></p>
+          
+          <ul>
+          <!-- <p><strong>Ingredients: </strong> -->
+          <%# @recipe.required_ingredients.each do |required| %>
+          
+          <!-- <li><%#= required.quantity.to_i %> <%#= required.units %> <%#= ingredient.name %></li> -->
+          
+          </p>
+          <% #end %>
+      
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /.Description --> 
+  </div>
+  <!-- /.container --> 
+</section>
+<!-- /.About Section --> 

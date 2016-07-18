@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {text-transform: uppercase;font-family: 'Catamaran', sans
 ================================ */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;	z-index: 9999;background: url(../img/loader/preloader.gif)center no-repeat #fed136;}
+.se-pre-con {position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;	z-index: 9999;background: url(preloader.gif)center no-repeat #fed136;}
 
 
 /* Backgrounds 
@@ -139,33 +139,33 @@ header .intro-text-sm .intro-heading {margin-bottom: 50px;text-transform: upperc
 header .intro-text-sm p.address {font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-weight: 500;padding-top: 30px;text-transform: uppercase;font-size:16px;}
 }
 
-#home {background-image: url(../img/header-bg.jpg);	}
-#homev2 {background-image: url(../img/header-bg-single-one.jpg);	}
-#aboutus {background-image: url(../img/headers/aboutus-header.jpg);	}
-#menubg {background-image: url(../img/headers/menu-header.jpg);	}
-#servicesbg {background-image: url(../img/headers/services-header.jpg);	}
-#gallerybg {background-image: url(../img/headers/gallery-header.jpg);	}
-#eventsbg {background-image: url(../img/headers/events-header.jpg);	}
-#teambg {background-image: url(../img/headers/team-header.jpg);	}
-#contactbg {background-image: url(../img/headers/contact-header.jpg);	}
+#home {background-image: url(header-bg.jpg);	}
+#homev2 {background-image: url(header-bg-single-one.jpg);	}
+#aboutus {background-image: url(aboutus-header.jpg);	}
+#menubg {background-image: url(menu-header.jpg);	}
+#servicesbg {background-image: url(services-header.jpg);	}
+#gallerybg {background-image: url(gallery-header.jpg);	}
+#eventsbg {background-image: url(events-header.jpg);	}
+#teambg {background-image: url(team-header.jpg);	}
+#contactbg {background-image: url(contact-header.jpg);	}
 
 /* Sections Global Styles
 ================================ */
 
-section {padding: 80px 0;}
-section h2.section-heading {margin-top: 0;margin-bottom: 15px;font-size: 60px;font-family: 'Amatic SC', cursive;}
+section {background-color: #86A2A3; opacity: 0.9; border-radius: 7px;}
+section h2.section-heading {margin-top: 0;margin-bottom: 0px;font-size: 60px;font-family: 'Amatic SC', cursive;}
 section h3.section-subheading {text-transform: none;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-size: 18px;font-weight: 400;}
 
 /* Section Menus 
 ================================ */
 
 section#menu h3.section-subheading {margin-bottom: 75px;text-transform: none;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-size: 18px;font-weight: 400;}
-section#menu {background-attachment: scroll;background-image: url(../img/menu-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;color: #fff;}
+section#menu {background-attachment: scroll;background-image: url(menu-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;color: #fff;}
 section#menu strong.title {font-size: 24px;text-transform: uppercase}
 section#menu .orange-bg {background-color: #f9bf3b;padding: 40px 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 section#menu .menu-bg {background-color: rgba(150,150,150,0.3);padding: 40px 20px;border-radius: 5px;color: #FFF;}
 section#menu-inner h3.section-subheading {margin-bottom: 75px;text-transform: none;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-size: 18px;font-weight: 400;}
-section#menu-inner {background-attachment: scroll;background-image: url(../img/menu-inner-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;}
+section#menu-inner {background-attachment: scroll;background-image: url(menu-inner-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;}
 section#menu-inner strong.title {font-size: 24px;text-transform: uppercase}
 section#menu-inner .orange-bg {background-color: #f9bf3b;padding: 40px 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 section#menu-inner .menu-bg {background-color: rgba(54,54,54,0.95);padding: 40px 20px;border-radius: 5px;color: #FFF;}
@@ -186,23 +186,23 @@ section#menuv2 .panel-title{margin-top:0;margin-bottom:0;font-size:24px;color:in
 section#menuv2 .panel-title a, section#menuv2 .panel-title a:hover, section#menuv2 .panel-title a:focus,#menuv2 .panel-title a:active, section#menuv2 .panel-title a.active{text-decoration:none}
 section#menuv2 .panel-default > .panel-heading + .panel-collapse > .panel-body{border-top-color:#f9f9f9;color:#fed136;background-color: rgba(255,255,255,0.1);}
 section#menuv2 .panel-group .panel + .panel{margin-top:0}
-section#menuv2 .panel-default > .panel-heading.menu01{background: url(../img/gallery/coffee-tea-01.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
-section#menuv2 .panel-default > .panel-heading.menu02{background: url(../img/gallery/specialty-drinks-02.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
-section#menuv2 .panel-default > .panel-heading.menu03{background: url(../img/gallery/party-food-03.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
-section#menuv2 .panel-default > .panel-heading.menu04{background: url(../img/gallery/specialty-drinks-05.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
-section#menuv2 .panel-default > .panel-heading.menu05{background: url(../img/gallery/party-food-06.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
-section#menuv2 .panel-default > .panel-heading.menu06{background: url(../img/gallery/party-food-04.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
+section#menuv2 .panel-default > .panel-heading.menu01{background: url(coffee-tea-01.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
+section#menuv2 .panel-default > .panel-heading.menu02{background: url(specialty-drinks-02.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
+section#menuv2 .panel-default > .panel-heading.menu03{background: url(party-food-03.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
+section#menuv2 .panel-default > .panel-heading.menu04{background: url(specialty-drinks-05.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
+section#menuv2 .panel-default > .panel-heading.menu05{background: url(party-food-06.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
+section#menuv2 .panel-default > .panel-heading.menu06{background: url(party-food-04.jpg) no-repeat;background-size:cover;background-position:center left;color:#FFF}
 
 /* Section weeklyspecialss 
 ================================ */
 
 section#weeklyspecials h3.section-subheading {text-transform: none;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-size: 18px;font-weight: 400;}
-section#weeklyspecials {background-attachment: scroll;background-image: url(../img/menu-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;color: #fff;}
-section#weeklyspecials strong.title {font-size: 24px;text-transform: uppercase}
+/*section#weeklyspecials {background-attachment: scroll;background-image: url(menu-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;color: #fff;}
+*/section#weeklyspecials strong.title {font-size: 24px;text-transform: uppercase}
 section#weeklyspecials .orange-bg {background-color: #f9bf3b;padding: 40px 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 section#weeklyspecials .weeklyspecials-bg {background-color: #86A2A3; opacity: 0.9; padding: 40px 20px;border-radius: 5px;color: #FFF;}
 section#weeklyspecials-inner h3.section-subheading {margin-bottom: 75px;text-transform: none;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-size: 18px;font-weight: 400;}
-section#weeklyspecials-inner {background-attachment: scroll;background-image: url(../img/weeklyspecials-inner-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;}
+section#weeklyspecials-inner {background-attachment: scroll;background-image: url(weeklyspecials-inner-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;}
 section#weeklyspecials-inner strong.title {font-size: 24px;text-transform: uppercase}
 section#weeklyspecials-inner .orange-bg {background-color: #f9bf3b;padding: 40px 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 section#weeklyspecials-inner .weeklyspecials-bg {background-color: rgba(54,54,54,0.95);padding: 40px 20px;border-radius: 5px;color: #FFF;}

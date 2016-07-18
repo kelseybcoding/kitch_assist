@@ -46,7 +46,7 @@
         </div>
         <div ng-repeat="pantry_item in pantry_items | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
           <label class="checkbox" for="{{ pantry_item.name }}">
-            <input ng-model="pantry_item.selected" type="checkbox" value="{{ pantry_item.id }}">
+            <input ng-model="pantry_item.selected" type="checkbox" value="{{ pantry_item.ingredient_id }}">
           </label>
           <h4 ng-click="toggleVolumeVisible(pantry_item)">{{ pantry_item.name }}</h4>
           <div ng-if="pantry_item.volumeVisible">
@@ -70,7 +70,7 @@
           <div class="col-md-5 col-md-offset-1 hideme" ng-class="{'pantry-sides': recipes}">
           <h3><strong><%=current_member.first_name%>'s Recipes </strong></h3>
             <div ng-repeat="recipe in recipes">
-              <h3>{{ recipe.title }}</h3>
+              <h3><a ng-href="/recipes/{{ recipe.id }}">{{ recipe.title }}</a></h3>
             </div>
           </div>
         </div>

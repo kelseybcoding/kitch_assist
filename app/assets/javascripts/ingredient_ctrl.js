@@ -66,7 +66,7 @@
 					if(selectedIds !== ""){
 						selectedIds += ",";
 					}
-					selectedIds += $scope.pantry_items[i].id;
+					selectedIds += $scope.pantry_items[i].ingredient_id;
 				}
 			}
 
