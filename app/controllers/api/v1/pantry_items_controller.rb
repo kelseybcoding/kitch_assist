@@ -32,15 +32,15 @@ class Api::V1::PantryItemsController < ApplicationController
 		
 	end
 
-	def update
-		ingredient = Ingredient.find_by(name: params[:ingredient_id])
-		@pantry_item = PantryItem.update(
-			ingredient_id: ingredient.id,
-			member_id: params["current_member_id"],
-			quantity: params["quantity"],
-			units: params["units"]
-			)
-	end
+	# def update
+	# 	ingredient = Ingredient.find_by(name: params[:ingredient_id])
+	# 	@pantry_item = PantryItem.update(
+	# 		ingredient_id: ingredient.id,
+	# 		member_id: params["current_member_id"],
+	# 		quantity: params["quantity"],
+	# 		units: params["units"]
+	# 		)
+	# end
 
 	def destroy
 		@pantry_item = PantryItem.find_by(id: params[:id])

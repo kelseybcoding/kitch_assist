@@ -1,5 +1,5 @@
 body {
-  background-image: url("vk-rees-food-photography-07.png");
+  background-image: url("258199-12337433-dark_food_photography_cape_town_south_africa_jpg.jpg");
   background-size: cover;
   background-attachment: fixed;
   color: #333;
@@ -7,7 +7,15 @@ body {
   font-size: 13px;
   line-height: 18px;
   padding-top: 70px;
-  margin: 33px;
+  margin-top: 60px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+body.members.index {
+  background-image: url("vk-rees-food-photography-07.png");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 p, ol, ul, td {
@@ -24,11 +32,11 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #FFF;
 
-  &:visited {
+  /*&:visited {
     color: #666;
-  }
+  }*/
 
   &:hover {
     color: #fff;
@@ -37,7 +45,7 @@ a {
 }
 
 th {
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 td {
@@ -104,3 +112,33 @@ label {
   margin-right: -50%;
   transform: translate(-50%, -50%)
 }
+
+.hideme {
+  opacity: 0;
+}
+
+.pantry-sides {
+  margin-top: 60px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-botton: 20px;
+  padding-right: 40px;
+  border-radius: 7px;
+  background-color: #86A2A3;
+  opacity: 0.9;
+  color: black;
+  height: relative;
+}
+
+.pantry-form-header {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 700px;
+  border-radius: 7px;
+  background-color: #86A2A3;
+  opacity: 0.9;
+  color: black;
+}
+

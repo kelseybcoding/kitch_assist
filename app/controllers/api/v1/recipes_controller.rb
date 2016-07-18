@@ -1,9 +1,5 @@
 class Api::V1::RecipesController < ApplicationController
 
-	
-	def index
-		
-	end
 
 	def search
 		recipes = []
@@ -13,5 +9,9 @@ class Api::V1::RecipesController < ApplicationController
 		end
 		@recipes = recipes.flatten.uniq
 		render :index
+	end
+	
+	def index
+		
 	end
 end

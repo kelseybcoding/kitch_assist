@@ -1,11 +1,102 @@
-<div>
+<!-- SNIPPET -->
 
-<%= form_tag '/login' do %>
+<style type="text/css">
+       
+/*body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
+*/
+.main{
+ 	margin-top: 70px;
 
-  <p>Username: <%= text_field_tag :username %></p>
-  <p>Password: <%= password_field_tag :password %></p>
-  <p><%= submit_tag "Submit" %></p>
+}
 
-<% end %>
+.form-group{
+	margin-bottom: 15px;
+}
 
-</div>
+label{
+	margin-bottom: 3px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+ 
+    </style>
+
+		<div class="container">
+			<div class="row main">	
+	            
+				<div class="main-login main-center">
+					<!-- <form class="form-horizontal" method="post" action="#"> -->
+
+					<%= form_tag '/login', class: "form-horizontal" %>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<%= text_field_tag :username, nil, class: "form-control", placeholder: "Enter Your Username" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<%= password_field_tag :password_digest, nil, class: "form-control", placeholder: "Enter Your Password" %>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group ">
+							<%= submit_tag "Submit", class: "btn btn-success btn-md btn-block login-button" %>
+						</div>
+
+				
+					
+				</div> <!-- main-login main-center -->
+			</div> <!-- end row main div -->
+		</div> <!-- end container div -->
+
+
+
+

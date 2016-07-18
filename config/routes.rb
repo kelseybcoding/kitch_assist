@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 	get '/login' => 'sessions#new'
 	post '/login' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'
+
 # These routes will be for signup. The first renders a form in the browse, the second will 
 # receive the form and create a user in our database using the data given to us by the user.
 # get '/members' => 'members#index'
@@ -53,7 +54,10 @@ namespace :api do
 		patch '/pantry_items/:id' => 'pantry_items#update'
   		delete '/pantry_items/:id' => 'pantry_items#destroy'
 
-  		get '/recipes' => 'recipes#search'
+  		
+  		get '/recipes' => 'recipes#index'
+  		get '/recipes/search' => 'recipes#search'
+  		
 	end
 end
 end

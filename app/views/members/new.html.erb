@@ -1,17 +1,177 @@
-<div>
+<!-- <div>
 
 <h1>Signup for KitchAssist!</h1>
 
-<%= form_for :member, url: '/members' do |f| %>
+<%#= form_for :member, url: '/members' do |f| %>
 
-  <p>First Name: <%= f.text_field :first_name %></p>
-  <p>Last Name: <%= f.text_field :last_name %></p>
-  <p>Username: <%= f.text_field :username %></p>
-  <p>Email: <%= f.text_field :email %></p>
-  <p>Password: <%= f.password_field :password %></p>
-  <p>Password Confirmation: <%= f.password_field :password_confirmation %></p>
-  <p><%= f.submit "Submit" %></p>
+  <p>First Name: <%#= f.text_field :first_name %></p>
+  <p>Last Name: <%#= f.text_field :last_name %></p>
+  <p>Username: <%#= f.text_field :username %></p>
+  <p>Email: <%#= f.text_field :email %></p>
+  <p>Password: <%#= f.password_field :password %></p>
+  <p>Password Confirmation: <%#= f.password_field :password_confirmation %></p>
+  <p><%#= f.submit "Submit" %></p>
 
-<% end %>
+<%# end %>
 
-</div>
+</div> -->
+
+<!-- SNIPPET -->
+
+<style type="text/css">
+       
+/*body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
+*/
+.main{
+ 	margin-top: 70px;
+
+}
+
+/*h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}*/
+
+/*hr{
+	width: 10%;
+	color: #fff;
+}*/
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 3px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+    </style>
+    
+
+
+		<div class="container">
+			<div class="row main">
+	               	
+	            
+				<div class="main-login main-center">
+					<!-- <form class="form-horizontal" method="post" action="#"> -->
+						
+						<%= form_for :member, class: "form-horizontal", url: "/members" do |f| %>
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">First Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<%= f.text_field :first_name, class: "form-control", placeholder: "Enter Your First Name" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Last Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<%= f.text_field :last_name, class: "form-control", placeholder: "Enter Your Last Name" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<%= f.text_field :username, class: "form-control", placeholder: "Enter Your Username" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<%= f.text_field :email, class: "form-control", placeholder: "Enter Your Email" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<%= f.password_field :password_digest, class: "form-control", placeholder: "Create a Password" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Your Password" %>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+						<%= f.submit "Submit", class: "btn btn-success btn-md btn-block login-button" %>
+						</div>
+
+						<div class="login-register">
+				            <a href="/login">Login</a>
+				        </div>
+				<% end %>
+					
+				</div>
+			</div>
+		</div>
+
+
+
+

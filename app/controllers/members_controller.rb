@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
 	
 	def index
-		
+		# render "index", layout: false
 	end
 
 	def edit
@@ -11,7 +11,7 @@ class MembersController < ApplicationController
   	end
 
 	def show
-		@recipes = Recipe.all
+		@recipes = Recipe.all.limit(25)
 	end
 
 	def new
@@ -35,6 +35,6 @@ class MembersController < ApplicationController
 private
 
 	 def member_params
-	    params.require(:member).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
+	    params.require(:member).permit(:first_name, :last_name, :username, :email, :password_digest, :password_confirmation)
 	 end
 end

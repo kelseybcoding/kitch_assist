@@ -1,9 +1,46 @@
-<h1>Dashboard for <em><%=current_member.username %></h1>
+	<!-- Food Menu Section -->
+		<section class="bg-darkest-gray" id="weeklyspecials">
+		  <div class="container"> 
+		    <!-- Heading and Subheading -->
+		    <div class="row">
+		      <div class="col-lg-12 text-center">
+		      </div>
+		    </div>
+		    <!-- /.Heading and Subheading --> 
+		    
+		    <!-- Border -->
+		    <!-- <div class="bounceIn wow">
+		      <div class="border">
+		        <div class="row">
+		          <div class="col-lg-12 text-center">
+		            
+		          </div>
+		        </div>
+		      </div>
+		    </div> -->
+		    <!-- /.Border --> 
 
-		<% @recipes.each do |recipe| %>
-		<h2><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></h2>
-		<% end %>
-
-
+		    
+		    <!-- Sample Weekly Menu -->
+		    <div class="fadeInUp wow">
+		      <div class="row">
+		        <div class="col-md-10 col-md-offset-1 text-center">
+		          <div class="weeklyspecials-bg">
+		        <div class="fadeInDown wow">
+		          <h2 class="section-heading">Suggested <span class=
+		                    "orange-accent">Recipes</span></h2>
+		        </div>
+		          <% @recipes.each do |recipe| %>
+					<p><strong class="title orange-accent"><a href='/recipes/<%= recipe.id %>'><%= recipe.title %></a></strong><br></p>
+					<% end %>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- /.Sample Weekly Menu --> 
+		  </div>
+		  <!-- /.container --> 
+		</section>
+		<!-- /.Food Menu Section --> 
 
 

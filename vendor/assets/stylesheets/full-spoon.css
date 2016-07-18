@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {text-transform: uppercase;font-family: 'Catamaran', sans
 ================================ */
 
 .bg-light-gray {background-color: #f7f7f7;}
-.bg-darkest-gray {background-color: #363636;}
+/*.bg-darkest-gray {background-color: #363636;}*/
 
 /* Buttons 
 ================================ */
@@ -200,7 +200,7 @@ section#weeklyspecials h3.section-subheading {text-transform: none;font-family: 
 section#weeklyspecials {background-attachment: scroll;background-image: url(../img/menu-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;color: #fff;}
 section#weeklyspecials strong.title {font-size: 24px;text-transform: uppercase}
 section#weeklyspecials .orange-bg {background-color: #f9bf3b;padding: 40px 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
-section#weeklyspecials .weeklyspecials-bg {background-color: rgba(150,150,150,0.3);padding: 40px 20px;border-radius: 5px;color: #FFF;}
+section#weeklyspecials .weeklyspecials-bg {background-color: #86A2A3; opacity: 0.9; padding: 40px 20px;border-radius: 5px;color: #FFF;}
 section#weeklyspecials-inner h3.section-subheading {margin-bottom: 75px;text-transform: none;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-size: 18px;font-weight: 400;}
 section#weeklyspecials-inner {background-attachment: scroll;background-image: url(../img/weeklyspecials-inner-bg.jpg);background-position: center center;background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;	-o-background-size: cover;}
 section#weeklyspecials-inner strong.title {font-size: 24px;text-transform: uppercase}

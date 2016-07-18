@@ -11,24 +11,29 @@
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <meta content="" name="description">
 <meta content="" name="author">
-<!-- Favicons -->
-<!-- <link rel="shortcut icon" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
- -->
 
 <link href='https://fonts.googleapis.com/css?family=Catamaran:400,600,300,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+
+
+
+  <!-- Website Font style -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+   
 </head>
 
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
+
 
 <!-- Navigation -->
 <nav class="navbar navbar-default nav-justified navbar-fixed-top">
@@ -48,7 +53,7 @@
               <li role="presentation"><%= link_to "/members/#{current_member.id}", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i><%= current_member.username %></li>
               <% end %>
               <li role="presentation"><%= link_to "Add to Pantry", "/ingredients", class: "page-scroll" %></li>
-              <li role="presentation"><%= link_to "Pantry", "/pantry_items", class: "page-scroll" %></li>
+              <!-- <li role="presentation"><%#= link_to "Pantry", "/pantry_items", class: "page-scroll" %></li> -->
               <li role="presentation"><%= link_to "Logout", '/logout', class: "page-scroll" %></li>
     
             <% else %>
@@ -77,9 +82,12 @@
    
 </nav> <!-- /.Navigation --> 
 
-
-
+<div class="home2">
+  
 <%= yield %>
+  
+</div>
+
 
 <!-- Footer -->
 <!-- <footer>

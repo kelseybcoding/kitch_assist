@@ -134,9 +134,9 @@ $('.gallery-item').magnificPopup({
 
 // Video Background
 //*******************
-$(document).ready(function() {
-    $('#bgvideo').backgroundVideo({
-         pauseVideoOnViewLoss: false
-      });
-  });
+// $(document).ready(function() {
+//     $('#bgvideo').backgroundVideo({
+//          pauseVideoOnViewLoss: false
+//       });
+//   });
 

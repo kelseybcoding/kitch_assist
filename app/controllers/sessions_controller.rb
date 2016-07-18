@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
 	def create
 		member = Member.find_by_username(params[:username])
-		if member && member.authenticate(params[:password])
+		if member && member.authenticate(params[:password_digest])
 			session[:member_id] = member.id
 			redirect_to "/members/#{member.id}"
 			#'/members/:id'
