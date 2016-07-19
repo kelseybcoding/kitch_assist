@@ -5,8 +5,10 @@
 
     <div class="row">
       <div class="pantry-form-header">
-
-      <h2>Add An Ingredient To Your Pantry!</h2>
+      <div class="weeklyspecials-bg">
+      <div class="fadeInDown wow">
+        <h2 class="section-heading">Add An Ingredient To <span class=
+                  "orange-accent">Your Pantry!</span></h2>
 
         <table>
           <tr>
@@ -27,12 +29,16 @@
               </div>
             </td>
             <td>
-              <button ng-click="addPantryItem(newIngredientId, newQuantity, newUnits)" class="btn btn-success">Stock Your Pantry</button>
+              <button ng-click="addPantryItem(newIngredientId, newQuantity, newUnits)" class="btn btn-info">Stock Your Pantry</button>
             </td>
           </tr>
         </table>
       </div>
     </div>
+    </div>
+    </div>
+
+    <!-- USER'S PANTRY -->
 
     <div class="row">
       <div class="col-md-5 pantry-sides">
@@ -42,7 +48,7 @@
         </div>
 
         <div>
-          <button ng-click="searchRecipesByPantry()" class="btn btn-success">Search by Pantry Items</button>
+          <button ng-click="searchRecipesByPantry()" class="btn btn-info">Search by Pantry Items</button>
         </div>
         <div ng-repeat="pantry_item in pantry_items | filter:{name: nameFilter} | orderBy:orderAttribute:descending track by $index">
           <label class="checkbox" for="{{ pantry_item.name }}">

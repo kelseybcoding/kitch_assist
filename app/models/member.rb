@@ -3,7 +3,7 @@ class Member < ApplicationRecord
 	
 	has_many :pantry_items
 	has_many :ingredients, through: :pantry_items
+	has_many :required_ingredients, through: :ingredients
+	has_many :recipes, through: :required_ingredients
 
-	has_many :owned_tools
-	has_many :kitchen_tools, through: :owned_tools
 end

@@ -19,6 +19,7 @@
 //= require jquery.magnific-popup.min.js
 //= require classie.js
 
+//= require cbpAnimatedHeader.min.js
 //= require wow.min.js
 //= require owl.carousel.min.js
 //= require fullspoon.js

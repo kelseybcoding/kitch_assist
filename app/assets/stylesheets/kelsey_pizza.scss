@@ -22,7 +22,7 @@ p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  margin: 28px;
 }
 
 pre {
@@ -89,7 +89,7 @@ div {
   }
 
   ul li {
-    font-size: 12px;
+    font-size: 18px;
     list-style: square;
   }
 }
@@ -132,12 +132,21 @@ label {
 .pantry-form-header {
   margin: 0 auto;
   padding-left: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
-  width: 700px;
+  width: 750px;
   border-radius: 7px;
   background-color: #86A2A3;
   opacity: 0.9;
-  color: black;
+  font-size: 40px;
+  font-family: 'Amatic SC', cursive; 
 }
 
+
+.recipe-image {
+  margin-top: 30px;
+  max-width: 450px;
+  border-radius: 7px;
+  opacity: none;
+
+}

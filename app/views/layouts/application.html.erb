@@ -52,7 +52,7 @@
             <% if current_member %>
               <li role="presentation"><%= link_to "/members/#{current_member.id}", class: "page-scroll" do %><i class="glyphicon glyphicon-home"></i><%= current_member.username %></li>
               <% end %>
-              <li role="presentation"><%= link_to "Add to Pantry", "/ingredients", class: "page-scroll" %></li>
+              <li role="presentation"><%= link_to "My Pantry", "/ingredients", class: "page-scroll" %></li>
               <!-- <li role="presentation"><%#= link_to "Pantry", "/pantry_items", class: "page-scroll" %></li> -->
               <li role="presentation"><%= link_to "Logout", '/logout', class: "page-scroll" %></li>
     
@@ -69,7 +69,7 @@
                   <div class="form-inline" align="right">
                     
                        <%= text_field_tag :search_term, nil, class: "form-control", placeholder: "Search Recipes" %>
-                       <%= submit_tag "Search", class: "btn btn-success" %>
+                       <%= submit_tag "Search", class: "btn btn-info" %>
                     
                      </div>
                      <% end %>

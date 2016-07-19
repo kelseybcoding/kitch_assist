@@ -11,7 +11,7 @@ class MembersController < ApplicationController
   	end
 
 	def show
-		@recipes = Recipe.all.limit(25)
+		@recipes = current_member.recipes.limit(25).uniq
 	end
 
 	def new

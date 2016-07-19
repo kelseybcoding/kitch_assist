@@ -79,7 +79,8 @@
 
 // delete pantry item ///
 		$scope.deletePantryItem = function(index){
-			$scope.pantry_items.splice(index,1);
+			var pantryItem = $scope.pantry_items.splice(index,1);
+			$http.delete("/api/v1/pantry_items/" + pantryItem[0].id);
 		};
 
 		// $scope.setOrderBy = function(attribute){
