@@ -132,13 +132,13 @@ label {
 .pantry-form-header {
   margin: 0 auto;
   padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
   width: 750px;
   border-radius: 7px;
   background-color: #86A2A3;
   opacity: 0.9;
-  font-size: 40px;
+  font-size: 60px;
   font-family: 'Amatic SC', cursive; 
 }
 
@@ -150,3 +150,31 @@ label {
   opacity: none;
 
 }
+
+.pantry-items {
+  font-size: 60px;
+  font-family: 'Amatic SC', cursive; 
+}
+
+/*.kitch-img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 7px;
+  opacity: none;
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+
+}*/
+
+
+img:hover {
+  filter: none; /* IE6-9 */
+  -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+ 
+}
+
+/*.thumb-size {
+  width: 150px;
+  height: 150px;
+}*/

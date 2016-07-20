@@ -26,7 +26,7 @@ a, a:hover, a:focus, a:active, a.active {outline: 0;}
 a {color: #fed136;}
 a:hover, a:focus, a:active, a.active {color: #f9bf3b;text-decoration: none;}
 
-h1, h2, h3, h4, h5, h6 {text-transform: uppercase;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-weight: 700;}
+/*h1, h2, h3, h4, h5, h6 {text-transform: uppercase;font-family: 'Catamaran', sans-serif; Helvetica, Arial, sans-serif;font-weight: 700;}*/
 
 .img-centered {margin: 0 auto;}
 

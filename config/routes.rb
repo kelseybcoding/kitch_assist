@@ -10,12 +10,6 @@ Rails.application.routes.draw do
 	get '/members/:id/edit' => 'members#edit'
 
 
-#**********Create RequiredIngredient Route**********
-
-
-  	# post '/required_ingredients' => 'required_ingredients#create'
-
-
 #**********Pantry Item Routes**********
 
 	get '/pantry_items' => 'pantry_items#index'

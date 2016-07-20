@@ -5,4 +5,5 @@ json.array! @recipes.each do | recipe |
 	json.yield_number recipe.yield_number
 	json.yield_unit recipe.yield_unit
 	json.description recipe.description
+	json.photo_url recipe.photo_url
 end

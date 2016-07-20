@@ -1,15 +1,3 @@
-<!-- <p id="notice"><%#= notice %></p> -->
-
-
-<!-- <h1><strong>Recipes</strong></h1> -->
-<!-- <br> -->
- 
-<%# @recipes.each do |recipe| %>
-        
-  <!-- <h4><a href='/recipes/<%#= recipe.id %>'><%#= image_tag (recipe.photo_url), class: "recipe-image" %></a></h4> -->
-    
-  <%# end %>
-   
 <!-- THEME -->
 </head>
 <link href='https://fonts.googleapis.com/css?family=Catamaran:400,600,300,700' rel='stylesheet' type='text/css'>
@@ -31,7 +19,7 @@
     <div class="row">
       <div class="col-lg-12 text-center">
        
-          <h2 class="section-heading">Your <span class="orange-accent">Recipes</span></h2>
+          <h2 class="section-heading">Search <span class="orange-accent">Results</span></h2>
           <h3 class="section-subheading">So many to choose from!</h3>
      
       </div>
@@ -72,7 +60,8 @@
             <!-- Gallery Image -->
             <figure class="gallery-image"> 
               <!-- Gallery Link --> 
-              <%= image_tag (recipe.photo_url), class: "gallery-item img-responsive", size: ("1200x800") %>
+              <%#= image_tag (recipe.photo_url), class: "gallery-item img-responsive", size: ("1200x800") %>
+              <a href="/recipes/<%= recipe.id %>"><div class="kitch-img" style="background-image: url('<%= recipe.photo_url %>'); height: 15em; background-size: cover; background-position: center;"></div></a>
               <!-- /.Gallery Link --> 
             </figure>
             <!-- /.Gallery Image --> 
